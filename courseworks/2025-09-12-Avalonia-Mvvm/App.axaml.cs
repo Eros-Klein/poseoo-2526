@@ -6,6 +6,7 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using _2025_09_12_Avalonia_Mvvm.ViewModels;
 using _2025_09_12_Avalonia_Mvvm.Views;
+using Avalonia.Controls;
 
 namespace _2025_09_12_Avalonia_Mvvm;
 

@@ -14,6 +14,7 @@
 /home/laflame/.nuget/packages/avalonia/11.3.5/ref/net8.0/Avalonia.MicroCom.dll
 /home/laflame/.nuget/packages/avalonia.native/11.3.5/lib/net8.0/Avalonia.Native.dll
 /home/laflame/.nuget/packages/avalonia/11.3.5/ref/net8.0/Avalonia.OpenGL.dll
+/home/laflame/.nuget/packages/avalonia.reactiveui/11.0.0/lib/net6.0/Avalonia.ReactiveUI.dll
 /home/laflame/.nuget/packages/avalonia.remote.protocol/11.3.5/lib/net8.0/Avalonia.Remote.Protocol.dll
 /home/laflame/.nuget/packages/avalonia.skia/11.3.5/lib/net8.0/Avalonia.Skia.dll
 /home/laflame/.nuget/packages/avalonia.themes.fluent/11.3.5/lib/net8.0/Avalonia.Themes.Fluent.dll
@@ -24,7 +25,9 @@
 /home/laflame/.nuget/packages/avalonia.x11/11.3.5/lib/net8.0/Avalonia.X11.dll
 /home/laflame/.nuget/packages/communitytoolkit.mvvm/8.2.1/lib/net6.0/CommunityToolkit.Mvvm.dll
 /home/laflame/.nuget/packages/dialoghost.avalonia/0.8.1/lib/netstandard2.0/DialogHost.Avalonia.dll
+/home/laflame/.nuget/packages/dynamicdata/7.9.5/lib/net6.0/DynamicData.dll
 /home/laflame/.nuget/packages/harfbuzzsharp/8.3.1.1/lib/net8.0/HarfBuzzSharp.dll
+/home/laflame/.nuget/packages/live.avalonia/1.4.1/lib/netcoreapp3.1/Live.Avalonia.dll
 /home/laflame/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/Microsoft.CSharp.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/Microsoft.VisualBasic.Core.dll
@@ -34,7 +37,9 @@
 /home/laflame/.nuget/packages/messagebox.avalonia/3.2.0/lib/netstandard2.0/MsBox.Avalonia.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/mscorlib.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/netstandard.dll
+/home/laflame/.nuget/packages/reactiveui/18.3.1/lib/net6.0/ReactiveUI.dll
 /home/laflame/.nuget/packages/skiasharp/2.88.9/lib/net6.0/SkiaSharp.dll
+/home/laflame/.nuget/packages/splat/14.4.1/lib/net6.0/Splat.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.AppContext.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.Buffers.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.Collections.Concurrent.dll
@@ -116,6 +121,7 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.Numerics.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.Numerics.Vectors.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.ObjectModel.dll
+/home/laflame/.nuget/packages/system.reactive/6.0.0/lib/net6.0/System.Reactive.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.Reflection.DispatchProxy.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.Reflection.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.8/ref/net9.0/System.Reflection.Emit.dll

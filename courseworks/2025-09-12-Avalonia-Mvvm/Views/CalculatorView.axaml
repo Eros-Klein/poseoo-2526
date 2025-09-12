@@ -1,0 +1,219 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:_2025_09_12_Avalonia_Mvvm.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+             x:Class="_2025_09_12_Avalonia_Mvvm.Views.CalculatorView"
+             x:DataType="vm:CalculatorViewModel">
+  
+  <UserControl.Styles>
+    <!-- Glass Card Style -->
+    <Style Selector="Border.glass-card">
+      <Setter Property="Background">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+            <GradientStop Color="#40FFFFFF" Offset="0" />
+            <GradientStop Color="#20FFFFFF" Offset="1" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="BorderBrush">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+            <GradientStop Color="#60FFFFFF" Offset="0" />
+            <GradientStop Color="#30FFFFFF" Offset="1" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="20" />
+      <Setter Property="BoxShadow" Value="0 8 32 0 #40000000" />
+    </Style>
+
+    <!-- Input Field Style -->
+    <Style Selector="Border.input-field">
+      <Setter Property="Background">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+            <GradientStop Color="#30FFFFFF" Offset="0" />
+            <GradientStop Color="#15FFFFFF" Offset="1" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="BorderBrush" Value="#40FFFFFF" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="BoxShadow" Value="inset 0 2 4 0 #20000000" />
+    </Style>
+
+    <!-- Label Style -->
+    <Style Selector="TextBlock.label">
+      <Setter Property="FontFamily" Value="SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" />
+      <Setter Property="FontSize" Value="16" />
+      <Setter Property="FontWeight" Value="Medium" />
+      <Setter Property="Foreground" Value="#E0FFFFFF" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- Input Control Styles -->
+    <Style Selector="NumericUpDown">
+      <Setter Property="FontFamily" Value="SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" />
+      <Setter Property="FontSize" Value="18" />
+      <Setter Property="FontWeight" Value="Regular" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="16,12" />
+    </Style>
+
+    <Style Selector="ComboBox">
+      <Setter Property="FontFamily" Value="SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" />
+      <Setter Property="FontSize" Value="18" />
+      <Setter Property="FontWeight" Value="Regular" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="16,12" />
+    </Style>
+
+    <!-- Calculate Button Container Style -->
+    <Style Selector="Border.button-container">
+      <Setter Property="CornerRadius" Value="16" />
+      <Setter Property="BoxShadow" Value="0 4 16 0 #40007AFF" />
+    </Style>
+
+    <Style Selector="Border.button-container:pointerover">
+      <Setter Property="BoxShadow" Value="0 6 20 0 #60007AFF" />
+    </Style>
+
+    <Style Selector="Border.button-container:pressed">
+      <Setter Property="BoxShadow" Value="0 2 8 0 #40007AFF" />
+    </Style>
+
+    <!-- Calculate Button Style -->
+    <Style Selector="Button.calculate-btn">
+      <Setter Property="Background">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+            <GradientStop Color="#FF007AFF" Offset="0" />
+            <GradientStop Color="#FF0056CC" Offset="1" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="16" />
+      <Setter Property="Padding" Value="32,16" />
+      <Setter Property="FontFamily" Value="SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" />
+      <Setter Property="FontSize" Value="20" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <Style Selector="Button.calculate-btn:pointerover">
+      <Setter Property="Background">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+            <GradientStop Color="#FF1A8CFF" Offset="0" />
+            <GradientStop Color="#FF1A66D9" Offset="1" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="Button.calculate-btn:pressed">
+      <Setter Property="Background">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+            <GradientStop Color="#FF0066E6" Offset="0" />
+            <GradientStop Color="#FF004BB3" Offset="1" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Result Display Style -->
+    <Style Selector="TextBlock.result">
+      <Setter Property="FontFamily" Value="SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" />
+      <Setter Property="FontSize" Value="32" />
+      <Setter Property="FontWeight" Value="Light" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+  </UserControl.Styles>
+
+  <!-- Background with gradient -->
+  <Border>
+    <Border.Background>
+      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+        <GradientStop Color="#FF1E1E2E" Offset="0" />
+        <GradientStop Color="#FF2D2D44" Offset="1" />
+      </LinearGradientBrush>
+    </Border.Background>
+    
+    <!-- Main Calculator Card -->
+    <Border Classes="glass-card"
+            MinWidth="400"
+            Margin="40"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center">
+      
+      <StackPanel Spacing="24" Margin="32">
+        
+        <!-- Title -->
+        <TextBlock Text="Calculator" 
+                   FontFamily="SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+                   FontSize="28" 
+                   FontWeight="Bold" 
+                   Foreground="#FFFFFF"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,8" />
+        
+        <!-- First Number Input -->
+        <StackPanel Spacing="8">
+          <TextBlock Text="First Number" Classes="label" />
+          <Border Classes="input-field">
+            <NumericUpDown Value="{Binding FirstNumber}" />
+          </Border>
+        </StackPanel>
+        
+        <!-- Second Number Input -->
+        <StackPanel Spacing="8">
+          <TextBlock Text="Second Number" Classes="label" />
+          <Border Classes="input-field">
+            <NumericUpDown Value="{Binding SecondNumber}" />
+          </Border>
+        </StackPanel>
+        
+        <!-- Operator Selection -->
+        <StackPanel Spacing="8">
+          <TextBlock Text="Operator" Classes="label" />
+          <Border Classes="input-field">
+            <ComboBox ItemsSource="{Binding Operators}" 
+                      SelectedItem="{Binding SelectedOperator}" />
+          </Border>
+        </StackPanel>
+        
+        <!-- Calculate Button -->
+        <Border Classes="button-container" Margin="0,16,0,0">
+          <Button Classes="calculate-btn" 
+                  Command="{Binding CalculateCommand}"
+                  HorizontalAlignment="Stretch">
+            Calculate
+          </Button>
+        </Border>
+        
+        <!-- Result Display -->
+        <StackPanel Spacing="12" Margin="0,16,0,0">
+          <TextBlock Text="Result" Classes="label" HorizontalAlignment="Center" />
+          <Border Classes="input-field" Padding="20">
+            <TextBlock Text="{Binding Result}" Classes="result" />
+          </Border>
+        </StackPanel>
+        
+      </StackPanel>
+    </Border>
+  </Border>
+</UserControl>

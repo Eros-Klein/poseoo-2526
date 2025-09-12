@@ -27,7 +27,9 @@
             <TabItem Header="Home">
                 <views:MessageBoxView />
             </TabItem>
-            <TabItem Header="Settings"></TabItem>
+            <TabItem Header="Calculator">
+                <views:CalculatorView />
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

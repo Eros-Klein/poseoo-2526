@@ -24,6 +24,9 @@ build_property.EnableCodeStyleSeverity =
 [/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Mvvm/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Mvvm/Views/CalculatorView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Mvvm/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

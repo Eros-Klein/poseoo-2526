@@ -1,0 +1,147 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:_25_09_12_Avalonia_Calculator.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="_25_09_12_Avalonia_Calculator.Views.CalculatorView"
+             x:DataType="vm:CalculatorViewModel">
+    <UserControl.Styles>
+        <Style Selector="Border">
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="CornerRadius" Value="20"></Setter>
+        </Style>
+        <Style Selector="Border.display">
+            <Setter Property="Background" Value="#8a1e4b"></Setter>
+            <Setter Property="Padding" Value="15"></Setter>
+        </Style>
+        <Style Selector="Border.container">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="MinWidth" Value="500"></Setter>
+            <Setter Property="MinHeight" Value="800"></Setter>
+            <Setter Property="Background" Value="#da90ae"></Setter>
+            <Setter Property="Padding" Value="15"></Setter>
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource HeaderFont}"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="#f2ecef"></Setter>
+        </Style>
+        <Style Selector="Grid">
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="ColumnSpacing" Value="5"></Setter>
+            <Setter Property="RowSpacing" Value="5"></Setter>
+        </Style>
+        <Style Selector="Button">
+            <Setter Property="Foreground" Value="#160a0f"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="CornerRadius" Value="15"></Setter>
+        </Style>
+    </UserControl.Styles>
+    <Border Classes="container">
+        <Grid RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*">
+            <Border Classes="display" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
+                <TextBlock Text="{Binding DisplayValue }"/>
+            </Border>
+            <Button Grid.Row="1" Grid.Column="0" 
+                    Command="{Binding AddNumber}"
+                    CommandParameter="1">
+                1
+            </Button>
+            <Button Grid.Row="1" Grid.Column="1"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="2">
+                2
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="3">
+                3
+            </Button>
+            <Button Grid.Row="1" Grid.Column="3"
+                    Command="{Binding AddOperator}"
+                    CommandParameter="/">
+                /
+            </Button>
+            <Button Grid.Row="2" Grid.Column="0"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="4">
+                4
+            </Button>
+            <Button Grid.Row="2" Grid.Column="1"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="5">
+                5
+            </Button>
+            <Button Grid.Row="2" Grid.Column="2"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="6">
+                6
+            </Button>
+            <Button Grid.Row="2" Grid.Column="3"
+                    Command="{Binding AddOperator}"
+                    CommandParameter="*">
+                *
+            </Button>
+            <Button Grid.Row="3" Grid.Column="0"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="7">
+                7
+            </Button>
+            <Button Grid.Row="3" Grid.Column="1"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="8">
+                8
+            </Button>
+            <Button Grid.Row="3" Grid.Column="2"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="9">
+                9
+            </Button>
+            <Button Grid.Row="3" Grid.Column="3"
+                    Command="{Binding AddOperator}"
+                    CommandParameter="-">
+                -
+            </Button>
+            <Button Grid.Row="4" Grid.Column="0"
+                    Command="{Binding AddNumber}"
+                    CommandParameter="0">
+                0
+            </Button>
+            <Button Grid.Row="4" Grid.Column="1"
+                    Command="{Binding Clear}">
+                C
+            </Button>
+            <Button Grid.Row="4" Grid.Column="2"
+                    Command="{Binding AddOperator}"
+                    CommandParameter="+">
+                +
+            </Button>
+            <Button Grid.Row="4" Grid.Column="3"
+                    Command="{Binding Calculate}"
+                    CommandParameter="true">
+                =
+            </Button>
+            <Button Grid.Row="5" Grid.Column="0"
+                    Command="{Binding StoreNumber}">
+                MS
+            </Button>
+            <Button Grid.Row="5" Grid.Column="1"
+                    Command="{Binding RetrieveNumber}">
+                MR
+            </Button>
+            <Button Grid.Row="5" Grid.Column="2"
+                    Command="{Binding ClearNumber}">
+                MC
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

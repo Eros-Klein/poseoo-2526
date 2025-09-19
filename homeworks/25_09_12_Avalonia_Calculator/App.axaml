@@ -1,0 +1,25 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="_25_09_12_Avalonia_Calculator.App"
+             xmlns:local="using:_25_09_12_Avalonia_Calculator"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+        <FluentTheme />
+        
+        <Style Selector="Window">
+            <Setter Property="Background" Value="#160a0f"/>
+            <Setter Property="Width" Value="500"></Setter>
+            <Setter Property="Height" Value="800"></Setter>
+        </Style>
+    </Application.Styles>
+             
+    <Application.Resources>
+        <FontFamily x:Key="HeaderFont">avares://25_09_12_Avalonia_Calculator/Assets/Fonts/HeaderFont.ttf#Bitcount</FontFamily>
+    </Application.Resources>
+</Application>

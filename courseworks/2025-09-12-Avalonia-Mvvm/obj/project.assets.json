@@ -217,24 +217,6 @@
           }
         }
       },
-      "Avalonia.ReactiveUI/11.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.0.0",
-          "ReactiveUI": "18.3.1",
-          "System.Reactive": "5.0.0"
-        },
-        "compile": {
-          "lib/net6.0/Avalonia.ReactiveUI.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Avalonia.ReactiveUI.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Avalonia.Remote.Protocol/11.3.5": {
         "type": "package",
         "compile": {
@@ -375,22 +357,6 @@
           }
         }
       },
-      "DynamicData/7.9.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Reactive": "5.0.0"
-        },
-        "compile": {
-          "lib/net6.0/DynamicData.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/DynamicData.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "HarfBuzzSharp/8.3.1.1": {
         "type": "package",
         "dependencies": {
@@ -514,20 +480,6 @@
           }
         }
       },
-      "Live.Avalonia/1.4.1": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.0.0",
-          "Avalonia.ReactiveUI": "11.0.0",
-          "System.Reactive": "6.0.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/Live.Avalonia.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Live.Avalonia.dll": {}
-        }
-      },
       "MessageBox.Avalonia/3.2.0": {
         "type": "package",
         "dependencies": {
@@ -548,23 +500,6 @@
         },
         "runtime": {
           "lib/net5.0/MicroCom.Runtime.dll": {}
-        }
-      },
-      "ReactiveUI/18.3.1": {
-        "type": "package",
-        "dependencies": {
-          "DynamicData": "7.9.5",
-          "Splat": "14.4.1"
-        },
-        "compile": {
-          "lib/net6.0/ReactiveUI.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/ReactiveUI.dll": {
-            "related": ".xml"
-          }
         }
       },
       "SkiaSharp/2.88.9": {
@@ -665,19 +600,6 @@
           }
         }
       },
-      "Splat/14.4.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Splat.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Splat.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "System.IO.Pipelines/8.0.0": {
         "type": "package",
         "compile": {
@@ -687,22 +609,6 @@
         },
         "runtime": {
           "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Reactive/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
             "related": ".xml"
           }
         },
@@ -1037,22 +943,6 @@
         "runtimes/osx/native/libAvaloniaNative.dylib"
       ]
     },
-    "Avalonia.ReactiveUI/11.0.0": {
-      "sha512": "0UJaE/ZEMJFo/i5QPu/zfULQy2orayhGbSw7Y8TD+T7SF4Vp7G6FIC7PJaBAuomk12t/nXmifCGOaormLsApqA==",
-      "type": "package",
-      "path": "avalonia.reactiveui/11.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.reactiveui.11.0.0.nupkg.sha512",
-        "avalonia.reactiveui.nuspec",
-        "lib/net6.0/Avalonia.ReactiveUI.dll",
-        "lib/net6.0/Avalonia.ReactiveUI.xml",
-        "lib/netstandard2.0/Avalonia.ReactiveUI.dll",
-        "lib/netstandard2.0/Avalonia.ReactiveUI.xml"
-      ]
-    },
     "Avalonia.Remote.Protocol/11.3.5": {
       "sha512": "IdBLa+RIECfkW/QgqWdXp4xN0R+IbbNx9KYWoU9b79Q8opi3pgSyLENuhHYYpLXGovIknMhAqqeUbhjdTRExew==",
       "type": "package",
@@ -1213,28 +1103,6 @@
         "lib/netstandard2.0/DialogHost.Avalonia.xml"
       ]
     },
-    "DynamicData/7.9.5": {
-      "sha512": "xFwVha7o3qUtVYxco5p+7Urcztc/m1gmaEUxOG0i7LNe+vfCfyb0ECAsT2FLm3zOPHb0g8s9qVu5LfPKfRNVng==",
-      "type": "package",
-      "path": "dynamicdata/7.9.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE/LICENSE",
-        "dynamicdata.7.9.5.nupkg.sha512",
-        "dynamicdata.nuspec",
-        "lib/net462/DynamicData.dll",
-        "lib/net462/DynamicData.xml",
-        "lib/net6.0/DynamicData.dll",
-        "lib/net6.0/DynamicData.xml",
-        "lib/netstandard2.0/DynamicData.dll",
-        "lib/netstandard2.0/DynamicData.xml",
-        "lib/uap10.0.16299/DynamicData.dll",
-        "lib/uap10.0.16299/DynamicData.pri",
-        "lib/uap10.0.16299/DynamicData.xml",
-        "logo.png"
-      ]
-    },
     "HarfBuzzSharp/8.3.1.1": {
       "sha512": "tLZN66oe/uiRPTZfrCU4i8ScVGwqHNh5MHrXj0yVf4l7Mz0FhTGnQ71RGySROTmdognAs0JtluHkL41pIabWuQ==",
       "type": "package",
@@ -1393,19 +1261,6 @@
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
       ]
     },
-    "Live.Avalonia/1.4.1": {
-      "sha512": "3SRibsx+7yZFWW8CODuEJiv1jQFiz9bzSmNU31kDqpXwS5QyUT5Gv4TReMGegL07emriOqCk/pZ28NnM5Bcfig==",
-      "type": "package",
-      "path": "live.avalonia/1.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE/LICENSE",
-        "lib/netcoreapp3.1/Live.Avalonia.dll",
-        "live.avalonia.1.4.1.nupkg.sha512",
-        "live.avalonia.nuspec"
-      ]
-    },
     "MessageBox.Avalonia/3.2.0": {
       "sha512": "f4iJxmyF0fKoJQdMCiSSRitP/niUl4g1mSBLGQ9+/58ZXrhjUImnuLdbuBY36n+JpMegy4FA62s588yJkbbjCA==",
       "type": "package",
@@ -1430,54 +1285,6 @@
         "lib/netstandard2.0/MicroCom.Runtime.dll",
         "microcom.runtime.0.11.0.nupkg.sha512",
         "microcom.runtime.nuspec"
-      ]
-    },
-    "ReactiveUI/18.3.1": {
-      "sha512": "0tclGtjrRPfA2gbjiM7O3DeNmo6/TpDn7CMN6jgzDrbgrnysM7oEzjGEeXbtXaOxH6kEf6RiMKWobZoSgbBXhQ==",
-      "type": "package",
-      "path": "reactiveui/18.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE/LICENSE",
-        "lib/monoandroid11.0/ReactiveUI.dll",
-        "lib/monoandroid11.0/ReactiveUI.pdb",
-        "lib/monoandroid11.0/ReactiveUI.xml",
-        "lib/monoandroid12.0/ReactiveUI.dll",
-        "lib/monoandroid12.0/ReactiveUI.pdb",
-        "lib/monoandroid12.0/ReactiveUI.xml",
-        "lib/net462/ReactiveUI.dll",
-        "lib/net462/ReactiveUI.xml",
-        "lib/net472/ReactiveUI.dll",
-        "lib/net472/ReactiveUI.xml",
-        "lib/net6.0-android31.0/ReactiveUI.dll",
-        "lib/net6.0-android31.0/ReactiveUI.xml",
-        "lib/net6.0-ios15.4/ReactiveUI.dll",
-        "lib/net6.0-ios15.4/ReactiveUI.xml",
-        "lib/net6.0-maccatalyst15.4/ReactiveUI.dll",
-        "lib/net6.0-maccatalyst15.4/ReactiveUI.xml",
-        "lib/net6.0-macos12.3/ReactiveUI.dll",
-        "lib/net6.0-macos12.3/ReactiveUI.xml",
-        "lib/net6.0-tvos15.4/ReactiveUI.dll",
-        "lib/net6.0-tvos15.4/ReactiveUI.xml",
-        "lib/net6.0/ReactiveUI.dll",
-        "lib/net6.0/ReactiveUI.xml",
-        "lib/netstandard2.0/ReactiveUI.dll",
-        "lib/netstandard2.0/ReactiveUI.xml",
-        "lib/tizen40/ReactiveUI.dll",
-        "lib/tizen40/ReactiveUI.xml",
-        "lib/uap10.0.16299/ReactiveUI.dll",
-        "lib/uap10.0.16299/ReactiveUI.pri",
-        "lib/uap10.0.16299/ReactiveUI.xml",
-        "lib/xamarinios10/ReactiveUI.dll",
-        "lib/xamarinios10/ReactiveUI.xml",
-        "lib/xamarinmac20/ReactiveUI.dll",
-        "lib/xamarinmac20/ReactiveUI.xml",
-        "lib/xamarintvos10/ReactiveUI.dll",
-        "lib/xamarintvos10/ReactiveUI.xml",
-        "logo.png",
-        "reactiveui.18.3.1.nupkg.sha512",
-        "reactiveui.nuspec"
       ]
     },
     "SkiaSharp/2.88.9": {
@@ -1658,22 +1465,6 @@
         "skiasharp.nativeassets.win32.nuspec"
       ]
     },
-    "Splat/14.4.1": {
-      "sha512": "Z1Mncnzm9pNIaIbZ/EWH6x5ESnKsmAvu8HP4StBRw+yhz0lzE7LCbt22TNTPaFrYLYbYCbGQIc/61yuSnpLidg==",
-      "type": "package",
-      "path": "splat/14.4.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE/LICENSE",
-        "lib/net6.0/Splat.dll",
-        "lib/net6.0/Splat.xml",
-        "lib/netstandard2.0/Splat.dll",
-        "lib/netstandard2.0/Splat.xml",
-        "splat.14.4.1.nupkg.sha512",
-        "splat.nuspec"
-      ]
-    },
     "System.IO.Pipelines/8.0.0": {
       "sha512": "FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
       "type": "package",
@@ -1703,34 +1494,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Reactive/6.0.0": {
-      "sha512": "31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw==",
-      "type": "package",
-      "path": "system.reactive/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net6.0-windows10.0.19041/_._",
-        "build/net6.0/_._",
-        "buildTransitive/net6.0-windows10.0.19041/_._",
-        "buildTransitive/net6.0/_._",
-        "icon.png",
-        "lib/net472/System.Reactive.dll",
-        "lib/net472/System.Reactive.xml",
-        "lib/net6.0-windows10.0.19041/System.Reactive.dll",
-        "lib/net6.0-windows10.0.19041/System.Reactive.xml",
-        "lib/net6.0/System.Reactive.dll",
-        "lib/net6.0/System.Reactive.xml",
-        "lib/netstandard2.0/System.Reactive.dll",
-        "lib/netstandard2.0/System.Reactive.xml",
-        "lib/uap10.0.18362/System.Reactive.dll",
-        "lib/uap10.0.18362/System.Reactive.pri",
-        "lib/uap10.0.18362/System.Reactive.xml",
-        "readme.md",
-        "system.reactive.6.0.0.nupkg.sha512",
-        "system.reactive.nuspec"
-      ]
-    },
     "Tmds.DBus.Protocol/0.21.2": {
       "sha512": "ScSMrUrrw8px4kK1Glh0fZv/HQUlg1078bNXNPfRPKQ3WbRzV9HpsydYEOgSoMK5LWICMf2bMwIFH0pGjxjcMA==",
       "type": "package",
@@ -1755,7 +1518,6 @@
       "Avalonia.Fonts.Inter >= 11.3.5",
       "Avalonia.Themes.Fluent >= 11.3.5",
       "CommunityToolkit.Mvvm >= 8.2.1",
-      "Live.Avalonia >= 1.4.1",
       "MessageBox.Avalonia >= 3.2.0"
     ]
   },
@@ -1825,10 +1587,6 @@
           "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[8.2.1, )"
-          },
-          "Live.Avalonia": {
-            "target": "Package",
-            "version": "[1.4.1, )"
           },
           "MessageBox.Avalonia": {
             "target": "Package",

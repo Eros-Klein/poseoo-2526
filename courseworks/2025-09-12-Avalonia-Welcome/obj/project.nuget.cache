@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j3l3jCuMMTQ=",
+  "dgSpecHash": "PABJhrLLb0c=",
   "success": true,
-  "projectFilePath": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia/2025-09-12-Avalonia.csproj",
+  "projectFilePath": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Welcome/2025-09-12-Avalonia.csproj",
   "expectedPackageFiles": [
     "/home/laflame/.nuget/packages/avalonia/11.3.5/avalonia.11.3.5.nupkg.sha512",
     "/home/laflame/.nuget/packages/avalonia.angle.windows.natives/2.1.25547.20250602/avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
@@ -32,7 +32,7 @@
     "/home/laflame/.nuget/packages/skiasharp.nativeassets.win32/2.88.9/skiasharp.nativeassets.win32.2.88.9.nupkg.sha512",
     "/home/laflame/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/laflame/.nuget/packages/tmds.dbus.protocol/0.21.2/tmds.dbus.protocol.0.21.2.nupkg.sha512",
-    "/home/laflame/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
+    "/home/laflame/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
   ],
   "logs": []
 }

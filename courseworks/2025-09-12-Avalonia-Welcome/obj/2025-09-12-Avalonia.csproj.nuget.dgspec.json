@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia/2025-09-12-Avalonia.csproj": {}
+    "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Welcome/2025-09-12-Avalonia.csproj": {}
   },
   "projects": {
-    "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia/2025-09-12-Avalonia.csproj": {
+    "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Welcome/2025-09-12-Avalonia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia/2025-09-12-Avalonia.csproj",
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Welcome/2025-09-12-Avalonia.csproj",
         "projectName": "2025-09-12-Avalonia",
-        "projectPath": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia/2025-09-12-Avalonia.csproj",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Welcome/2025-09-12-Avalonia.csproj",
         "packagesPath": "/home/laflame/.nuget/packages/",
-        "outputPath": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia/obj/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/courseworks/2025-09-12-Avalonia-Welcome/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/laflame/.nuget/NuGet/NuGet.Config"
@@ -79,7 +79,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[9.0.8, 9.0.8]"
+              "version": "[9.0.9, 9.0.9]"
             }
           ],
           "frameworkReferences": {
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

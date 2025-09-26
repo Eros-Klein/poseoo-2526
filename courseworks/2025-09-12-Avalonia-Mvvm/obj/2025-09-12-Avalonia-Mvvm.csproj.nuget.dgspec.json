@@ -68,10 +68,6 @@
               "target": "Package",
               "version": "[8.2.1, )"
             },
-            "Live.Avalonia": {
-              "target": "Package",
-              "version": "[1.4.1, )"
-            },
             "MessageBox.Avalonia": {
               "target": "Package",
               "version": "[3.2.0, )"

@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:_2025_09_26_Avalonia_Dependency_Injection.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:ToDoListViewModel"
+             x:Class="_2025_09_26_Avalonia_Dependency_Injection.Views.ToDoListView">
+    <UserControl.Styles>
+        <Style Selector="ItemsControl">
+            <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
+        <Style Selector="Button">
+            <Setter Property="FontSize" Value="25"></Setter>
+        </Style>
+        <Style Selector="Grid">
+            <Setter Property="RowSpacing" Value="5"></Setter>
+        </Style>
+    </UserControl.Styles>
+        <Grid RowDefinitions="Auto,Auto,*" ColumnDefinitions="*">
+            <TextBox Grid.Row="0" Text="{Binding InputText}" />
+            <Button Grid.Row="1" Command="{Binding AddToDo}">Add</Button>
+            
+            <ScrollViewer Grid.Row="2" >
+                <ListBox ItemsSource="{Binding Items}">
+                    <ItemsControl.DataTemplates>
+                        <DataTemplate x:DataType="vm:ToDoItem">
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox IsChecked="{Binding Done}" />
+                                <TextBlock Text="{Binding Title}" FontSize="20" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.DataTemplates>
+            </ListBox>
+            </ScrollViewer>
+        </Grid>
+</UserControl>

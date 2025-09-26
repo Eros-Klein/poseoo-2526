@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DOy781ryVSg=",
+  "dgSpecHash": "LFFukUD4dEg=",
   "success": true,
   "projectFilePath": "/home/laflame/Documents/School-Git-2025/homeworks/25_09_12_Avalonia_Calculator/25_09_12_Avalonia_Calculator.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "/home/laflame/.nuget/packages/skiasharp.nativeassets.win32/2.88.9/skiasharp.nativeassets.win32.2.88.9.nupkg.sha512",
     "/home/laflame/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/laflame/.nuget/packages/tmds.dbus.protocol/0.21.2/tmds.dbus.protocol.0.21.2.nupkg.sha512",
-    "/home/laflame/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
+    "/home/laflame/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
   ],
   "logs": []
 }

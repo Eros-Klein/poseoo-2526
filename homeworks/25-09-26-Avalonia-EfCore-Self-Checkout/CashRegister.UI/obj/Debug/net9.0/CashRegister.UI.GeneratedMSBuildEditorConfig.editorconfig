@@ -24,5 +24,8 @@ build_property.EnableCodeStyleSeverity =
 [/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/Views/CheckoutWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

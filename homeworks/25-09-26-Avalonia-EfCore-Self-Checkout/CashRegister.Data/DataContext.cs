@@ -8,6 +8,8 @@ public partial class ApplicationDataContext(DbContextOptions<ApplicationDataCont
     : DbContext(options)
 {
     public DbSet<Greeting> Greetings => Set<Greeting>();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<Order> Orders => Set<Order>();
 }
 
 public class ApplicationDataContextFactory : IDesignTimeDbContextFactory<ApplicationDataContext>

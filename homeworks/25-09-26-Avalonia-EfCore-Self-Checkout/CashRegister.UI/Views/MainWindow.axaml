@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:views="using:CashRegister.UI.Views"
         x:Class="CashRegister.UI.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -16,10 +17,7 @@
     </Design.DataContext>
 
     <!-- Some code to demonstrate how to access the DB -->
-    <StackPanel>
-        <Button Command="{Binding AddSampleDataCommand}">Add Sample Data</Button>
-        <Button Command="{Binding GetFirstSampleRowCommand}">Load Data</Button>
-    </StackPanel>
+    <views:CheckoutWindow />
 
     <!--
     Tips for UI:

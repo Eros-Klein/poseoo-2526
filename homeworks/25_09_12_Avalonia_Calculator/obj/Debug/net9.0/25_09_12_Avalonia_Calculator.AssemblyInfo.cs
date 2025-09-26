@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("25_09_12_Avalonia_Calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+968a494060e053e2a791f6bb5b709e1f340adecf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25507119d4bd1e2f4d99de27b7a2fa05eadda6d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("25_09_12_Avalonia_Calculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("25_09_12_Avalonia_Calculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

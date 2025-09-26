@@ -41,12 +41,12 @@ public partial class App : Application
             collection.AddSingleton<IConfiguration>(configuration);
             collection.AddTransient<MainWindow>();
             collection.AddTransient<MainWindowViewModel>();
+            collection.AddTransient<CheckoutWindow>();
+            collection.AddTransient<CheckoutWindowViewModel>();
             collection.AddDbContextFactory<ApplicationDataContext>(options =>
                 options.UseSqlite(configuration.GetConnectionString("CashRegister")));
             var services = collection.BuildServiceProvider();
 
-            // It is important to create the main window via the service provider,
-            // so that all dependencies are injected properly.
             desktop.MainWindow = services.GetRequiredService<MainWindow>();
         }
 

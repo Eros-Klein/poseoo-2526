@@ -26,3 +26,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/laflame/Documents/School-Git-2025/courseworks/2025-09-26-Avalonia-Dependency-Injection/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/laflame/Documents/School-Git-2025/courseworks/2025-09-26-Avalonia-Dependency-Injection/Views/ToDoListView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

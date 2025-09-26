@@ -1,0 +1,16 @@
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/bin/Debug/net9.0/appsettings.json
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/bin/Debug/net9.0/CashRegister.Data.deps.json
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/bin/Debug/net9.0/CashRegister.Data.runtimeconfig.json
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/bin/Debug/net9.0/CashRegister.Data.dll
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/bin/Debug/net9.0/CashRegister.Data.pdb
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.csproj.AssemblyReference.cache
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.GeneratedMSBuildEditorConfig.editorconfig
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.AssemblyInfoInputs.cache
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.AssemblyInfo.cs
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.csproj.CoreCompileInputs.cache
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.sourcelink.json
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.dll
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/refint/CashRegister.Data.dll
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.pdb
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/CashRegister.Data.genruntimeconfig.cache
+/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/Debug/net9.0/ref/CashRegister.Data.dll

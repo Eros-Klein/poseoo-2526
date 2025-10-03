@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ndLqLvdV0QY=",
+  "dgSpecHash": "oeUd4FKauuE=",
   "success": true,
-  "projectFilePath": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj",
+  "projectFilePath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj",
   "expectedPackageFiles": [
     "/home/laflame/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/laflame/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

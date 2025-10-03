@@ -2,6 +2,7 @@
 using CashRegister.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CashRegister.Data.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    partial class ApplicationDataContextModelSnapshot : ModelSnapshot
+    [Migration("20251003103329_new3")]
+    partial class new3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
@@ -59,9 +62,14 @@ namespace CashRegister.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Receipts");
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("CashRegister.Data.ReceiptLine", b =>
@@ -88,6 +96,13 @@ namespace CashRegister.Data.Migrations
                     b.ToTable("ReceiptLines");
                 });
 
+            modelBuilder.Entity("CashRegister.Data.Receipt", b =>
+                {
+                    b.HasOne("CashRegister.Data.Product", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("ProductId");
+                });
+
             modelBuilder.Entity("CashRegister.Data.ReceiptLine", b =>
                 {
                     b.HasOne("CashRegister.Data.Product", "Product")
@@ -99,6 +114,11 @@ namespace CashRegister.Data.Migrations
                         .HasForeignKey("ReceiptId");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("CashRegister.Data.Product", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("CashRegister.Data.Receipt", b =>

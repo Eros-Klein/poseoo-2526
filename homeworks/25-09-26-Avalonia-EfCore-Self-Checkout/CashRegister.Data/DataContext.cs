@@ -9,7 +9,8 @@ public partial class ApplicationDataContext(DbContextOptions<ApplicationDataCont
 {
     public DbSet<Greeting> Greetings => Set<Greeting>();
     public DbSet<Product> Products => Set<Product>();
-    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<Receipt> Receipts => Set<Receipt>();
+    public DbSet<ReceiptLine> ReceiptLines => Set<ReceiptLine>();
 }
 
 public class ApplicationDataContextFactory : IDesignTimeDbContextFactory<ApplicationDataContext>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj": {}
+    "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj": {}
   },
   "projects": {
-    "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj": {
+    "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj",
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj",
         "projectName": "CashRegister.Data",
-        "projectPath": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj",
         "packagesPath": "/home/laflame/.nuget/packages/",
-        "outputPath": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/laflame/.nuget/NuGet/NuGet.Config"
@@ -85,14 +85,14 @@
         }
       }
     },
-    "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj": {
+    "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj",
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj",
         "projectName": "CashRegister.UI",
-        "projectPath": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/CashRegister.UI.csproj",
         "packagesPath": "/home/laflame/.nuget/packages/",
-        "outputPath": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/obj/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.UI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/laflame/.nuget/NuGet/NuGet.Config"
@@ -107,8 +107,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj": {
-                "projectPath": "/home/laflame/Documents/School-Git-2025/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj"
+              "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj": {
+                "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/25-09-26-Avalonia-EfCore-Self-Checkout/CashRegister.Data/CashRegister.Data.csproj"
               }
             }
           }

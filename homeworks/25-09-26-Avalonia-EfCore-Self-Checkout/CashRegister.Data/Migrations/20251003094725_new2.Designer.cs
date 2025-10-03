@@ -2,6 +2,7 @@
 using CashRegister.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CashRegister.Data.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    partial class ApplicationDataContextModelSnapshot : ModelSnapshot
+    [Migration("20251003094725_new2")]
+    partial class new2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
@@ -29,6 +32,17 @@ namespace CashRegister.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Greetings");
+                });
+
+            modelBuilder.Entity("CashRegister.Data.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("CashRegister.Data.Product", b =>
@@ -53,57 +67,34 @@ namespace CashRegister.Data.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("CashRegister.Data.Receipt", b =>
+            modelBuilder.Entity("OrderProduct", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("OrdersId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.Property<int>("ProductsId")
+                        .HasColumnType("INTEGER");
 
-                    b.ToTable("Receipts");
+                    b.HasKey("OrdersId", "ProductsId");
+
+                    b.HasIndex("ProductsId");
+
+                    b.ToTable("OrderProduct");
                 });
 
-            modelBuilder.Entity("CashRegister.Data.ReceiptLine", b =>
+            modelBuilder.Entity("OrderProduct", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("ReceiptId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("ReceiptId");
-
-                    b.ToTable("ReceiptLines");
-                });
-
-            modelBuilder.Entity("CashRegister.Data.ReceiptLine", b =>
-                {
-                    b.HasOne("CashRegister.Data.Product", "Product")
+                    b.HasOne("CashRegister.Data.Order", null)
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("OrdersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("CashRegister.Data.Receipt", null)
-                        .WithMany("Lines")
-                        .HasForeignKey("ReceiptId");
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("CashRegister.Data.Receipt", b =>
-                {
-                    b.Navigation("Lines");
+                    b.HasOne("CashRegister.Data.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

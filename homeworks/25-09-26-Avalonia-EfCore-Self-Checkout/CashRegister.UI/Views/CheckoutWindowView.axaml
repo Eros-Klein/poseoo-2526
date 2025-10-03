@@ -1,0 +1,67 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:CashRegister.UI.ViewModels"
+             xmlns:m="using:CashRegister.Data"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CashRegister.UI.Views.CheckoutWindowView"
+             x:DataType="vm:CheckoutWindowViewModel">
+  <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+      <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" ItemsSource="{Binding Products}" Background="LightSlateGray">
+          <ItemsControl.DataTemplates>
+              <DataTemplate x:DataType="m:Product">
+                  <Button Command="{Binding $parent[ItemsControl].((vm:CheckoutWindowViewModel)DataContext).AddProduct}"
+                          CommandParameter="{Binding}">
+                      <WrapPanel MinWidth="250" MinHeight="250" ItemsAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1" Background="BlueViolet">
+                          <TextBlock Foreground="Aqua" Text="{Binding Name}" Margin="2"/>
+                          <TextBlock Foreground="Aqua" Text="{Binding Weight}" Margin="2"/>
+                      </WrapPanel>
+                  </Button>
+              </DataTemplate>
+          </ItemsControl.DataTemplates>
+          <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                  <WrapPanel Orientation="Horizontal"/>
+              </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+      </ListBox>
+      <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ReceiptLines}" Background="LightSlateGray">
+          <ItemsControl.DataTemplates>
+              <DataTemplate x:DataType="m:ReceiptLine">
+                  <StackPanel>
+                      <Grid ColumnDefinitions="*,*,*" RowDefinitions="*">
+                          <Border Grid.Column="0" Grid.Row="0" BorderBrush="BlueViolet" BorderThickness="1">
+                              <WrapPanel>
+                                  <TextBlock Text="{Binding Product.Name}" Margin="1"/>
+                                  <TextBlock Text="{Binding Product.Weight}" Margin="1"/>
+                              </WrapPanel>
+                          </Border>
+                          <Border Grid.Column="1" Grid.Row="0" BorderBrush="BlueViolet" BorderThickness="1">
+                              <TextBlock Margin="1" Text="{Binding Quantity}"/>
+                          </Border>
+                          <Border Grid.Column="2" Grid.Row="0" BorderBrush="BlueViolet" BorderThickness="1">
+                              <TextBlock Margin="1" Text="{Binding Price}"/>
+                          </Border>
+                      </Grid>
+                  </StackPanel>
+              </DataTemplate>
+          </ItemsControl.DataTemplates> 
+          <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                  <StackPanel Orientation="Vertical"/>
+              </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+      </ListBox>
+      <WrapPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Background="LightSlateGray">
+          <TextBlock Margin="3" Text="Gesamtsumme:"/>
+          <TextBlock Margin="3" FontSize="32" Text="{Binding OrderSummary}"/>
+      </WrapPanel>
+      <Button Grid.Row="2" Grid.Column="1" Background="Aqua" 
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              Command="{Binding SubmitOrder}">
+          <TextBlock TextAlignment="Center" Foreground="BlueViolet" FontSize="50">CHECKOUT</TextBlock>
+      </Button>
+  </Grid>
+</UserControl>

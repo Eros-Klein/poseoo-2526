@@ -21,18 +21,43 @@ public class Product
     public string Name { get; set; } = string.Empty;
     public string Weight { get; set; } = string.Empty;
     public float Price { get; set; }
+
+    public Product(int id, string name, string weight, float price)
+    {
+        Id = id;
+        Name = name;
+        Weight = weight;
+        Price = price;
+    }
+
+    public Product() {}
 }
 
-public class Order 
+public class Receipt 
 {
     public int Id { get; set; }
     
-    public List<Product>? Products { get; set; } = new();
+    public List<ReceiptLine> Lines { get; set; } = [];
 }
 
-public class OrderProduct
+public class ReceiptLine
 {
     public int Id { get; set; }
-    public int OrderId { get; set; }
-    public int ProductId { get; set; }
+    
+    public Product? Product { get; set; }
+    public int Quantity { get; set; }
+    
+    public float Price { get; set; }
+    
+    public Receipt? Receipt { get; set; }
+
+    public ReceiptLine(int id, Product product, int quantity, float price)
+    {
+        Id = id;
+        Product = product;
+        Quantity = quantity;
+        Price = price;
+    }
+    
+    public ReceiptLine() {}
 }

@@ -13,12 +13,11 @@
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <vm:CheckoutWindowViewModel />
     </Design.DataContext>
-
-    <!-- Some code to demonstrate how to access the DB -->
-    <views:CheckoutWindow />
-
+    
+    <ContentControl Content="{Binding CheckoutWindowViewModel}"/>
+    
     <!--
     Tips for UI:
     - Use a Grid as the main layout container

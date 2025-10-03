@@ -7,10 +7,12 @@ using MsBox.Avalonia.Enums;
 
 namespace CashRegister.UI.ViewModels;
 
-public partial class MainWindowViewModel(IDbContextFactory<ApplicationDataContext> contextFactory) : ViewModelBase
+public partial class MainWindowViewModel(IDbContextFactory<ApplicationDataContext> contextFactory, CheckoutWindowViewModel checkoutWindowViewModel) : ViewModelBase
 {
     private readonly ApplicationDataContext dbContext = contextFactory.CreateDbContext();
 
+    public CheckoutWindowViewModel CheckoutWindowViewModel { get; } = checkoutWindowViewModel;
+    
     [RelayCommand]
     private async Task AddSampleData()
     {

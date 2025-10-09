@@ -50,7 +50,12 @@ public partial class CheckoutWindowViewModel : ViewModelBase
         }
         else
         {
-            ReceiptLines.Add(new ReceiptLine(0, product, 1, product.Price));
+            ReceiptLines.Add(new  ReceiptLine
+            {
+                Product = product,
+                Quantity = 1,
+                Price = product.Price
+            });
         }
         
         UpdateOrderSummary();
@@ -66,19 +71,22 @@ public partial class CheckoutWindowViewModel : ViewModelBase
         
         foreach (var receiptLine in ReceiptLines)
         {
-            var receiptLineNew = new ReceiptLine();
-            
-            receiptLineNew.Product = receiptLine.Product;
-            receiptLineNew.Price = receiptLine.Price;
-            receiptLineNew.Quantity = receiptLine.Quantity;
-            receiptLineNew.Receipt = order;
-            
+            var receiptLineNew = new ReceiptLine
+                {
+                    Product = receiptLine.Product,
+                    Quantity = receiptLine.Quantity,
+                    Price = receiptLine.Price,
+                    Receipt = order
+                };
+
             await _dbContext.ReceiptLines.AddAsync(receiptLineNew);
         }
         
         await _dbContext.SaveChangesAsync();
         
         ReceiptLines.Clear();
+        
+        UpdateOrderSummary();
     }
     
     public CheckoutWindowViewModel(IDbContextFactory<ApplicationDataContext> contextFactory)
@@ -89,7 +97,7 @@ public partial class CheckoutWindowViewModel : ViewModelBase
 
     private void UpdateOrderSummary()
     {
-        OrderSummary = ReceiptLines.Sum(re => re.Quantity * re.Price);
+        OrderSummary = ReceiptLines.Sum(re => re.Price);
     }
 
     private async Task RetrieveProducts()

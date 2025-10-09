@@ -44,20 +44,13 @@ public class ReceiptLine
 {
     public int Id { get; set; }
     
+    public int? ProductId { get; set; }
     public Product? Product { get; set; }
+    
     public int Quantity { get; set; }
     
     public float Price { get; set; }
     
+    public int? ReceiptId { get; set; }
     public Receipt? Receipt { get; set; }
-
-    public ReceiptLine(int id, Product product, int quantity, float price)
-    {
-        Id = id;
-        Product = product;
-        Quantity = quantity;
-        Price = price;
-    }
-    
-    public ReceiptLine() {}
 }

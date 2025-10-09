@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8ZXdbDfUU48=",
+  "success": true,
+  "projectFilePath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/SatisfactoryPlanner.Data.csproj",
+  "expectedPackageFiles": [
+    "/home/laflame/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

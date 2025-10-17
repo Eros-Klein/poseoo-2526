@@ -1,0 +1,16 @@
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/bin/Debug/net9.0/appsettings.json
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/bin/Debug/net9.0/DataAccess.deps.json
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/bin/Debug/net9.0/DataAccess.runtimeconfig.json
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/bin/Debug/net9.0/DataAccess.dll
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/bin/Debug/net9.0/DataAccess.pdb
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.csproj.AssemblyReference.cache
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.AssemblyInfoInputs.cache
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.AssemblyInfo.cs
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.csproj.CoreCompileInputs.cache
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.sourcelink.json
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.dll
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/refint/DataAccess.dll
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.pdb
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/DataAccess.genruntimeconfig.cache
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/DataAccess/obj/Debug/net9.0/ref/DataAccess.dll

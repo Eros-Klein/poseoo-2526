@@ -1,0 +1,13 @@
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/bin/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.deps.json
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/bin/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.dll
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/bin/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.pdb
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.csproj.AssemblyReference.cache
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.AssemblyInfoInputs.cache
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.AssemblyInfo.cs
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.csproj.CoreCompileInputs.cache
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.sourcelink.json
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.dll
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/refint/2025-10-17-Aspire.ServiceDefaults.dll
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/2025-10-17-Aspire.ServiceDefaults.pdb
+/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-10-17-Aspire/2025-10-17-Aspire.ServiceDefaults/obj/Debug/net9.0/ref/2025-10-17-Aspire.ServiceDefaults.dll

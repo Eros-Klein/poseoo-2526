@@ -1,0 +1,49 @@
+<div class="checkout-container">
+  <div class="products-panel">
+    <div class="products-grid">
+      @for (product of products(); track product.id) {
+        <button class="product-button" (click)="addProduct(product)">
+          <div class="product-content">
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-measure">{{ product.unitMeasure }}</div>
+          </div>
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="receipt-panel">
+    <div class="receipt-header">
+      <div class="receipt-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th class="quantity-column">Qty</th>
+              <th class="total-column">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (line of selectedReceiptLines(); track line.product.id) {
+              <tr>
+                <td>{{ line.product.name }}</td>
+                <td class="quantity-column">{{ line.quantity }}</td>
+                <td class="total-column">{{ line.price | currency }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="total-section">
+      <div class="sum-header">Gesamtsumme:</div>
+      <div class="sum-value">{{ totalPrice() | currency }}</div>
+    </div>
+
+    <button class="checkout-button" (click)="checkout()">
+      <span class="checkout-text">Checkout</span>
+    </button>
+  </div>
+</div>
+

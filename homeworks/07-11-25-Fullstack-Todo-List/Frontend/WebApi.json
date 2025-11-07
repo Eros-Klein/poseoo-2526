@@ -5,60 +5,42 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/ping": {
+    "/to-do": {
       "get": {
         "tags": [
-          "WebApi"
+          "ToDoEndpoints"
         ],
-        "description": "A simple ping endpoint to check if the service is running.",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              }
+        "parameters": [
+          {
+            "name": "assignee",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "completitionStatus",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
             }
           }
-        }
-      }
-    },
-    "/dummies": {
-      "get": {
-        "tags": [
-          "WebApi"
         ],
-        "description": "Gets all dummy records from the database.",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Dummy"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
-      }
-    },
-    "/dummy-logic": {
+      },
       "post": {
         "tags": [
-          "WebApi"
+          "ToDoEndpoints"
         ],
-        "description": "Increments the DecimalProperty of the provided Dummy object by 1.5 using the DummyLogic service.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Dummy"
+                "$ref": "#/components/schemas/ToDoCreationDto"
               }
             }
           },
@@ -66,29 +48,53 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Dummy"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
-    "/generate": {
-      "post": {
+    "/to-do/{id}": {
+      "get": {
         "tags": [
-          "DemoEndpoints"
+          "ToDoEndpoints"
         ],
-        "description": "Generates a list of DemoOutputDto objects based on the specified number of records.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ToDoEndpoints"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DemoInputDto"
+                "$ref": "#/components/schemas/ToDoLogic"
               }
             }
           },
@@ -96,20 +102,59 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DemoOutputDto"
-                  }
-                }
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ToDoEndpoints"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ToDoCreationDto"
               }
             }
           },
-          "400": {
-            "description": "Bad Request"
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ToDoEndpoints"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -117,58 +162,29 @@
   },
   "components": {
     "schemas": {
-      "DemoInputDto": {
+      "ToDoCreationDto": {
         "required": [
-          "numberOfRecords"
+          "title",
+          "assignee"
         ],
         "type": "object",
         "properties": {
-          "numberOfRecords": {
-            "type": "integer",
-            "format": "int32"
-          }
-        }
-      },
-      "DemoOutputDto": {
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
+          "title": {
+            "type": "string"
           },
-          "name": {
+          "assignee": {
             "type": "string"
           }
         }
       },
-      "Dummy": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string"
-          },
-          "decimalProperty": {
-            "type": "number",
-            "format": "double"
-          }
-        }
+      "ToDoLogic": {
+        "type": "object"
       }
     }
   },
   "tags": [
     {
-      "name": "WebApi"
-    },
-    {
-      "name": "DemoEndpoints"
+      "name": "ToDoEndpoints"
     }
   ]
 }

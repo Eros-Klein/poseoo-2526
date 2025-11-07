@@ -62,8 +62,7 @@ public class ToDoTextParser : IToDoTextParser
                 toDos.Add(new ToDo
                 {
                     Title = task,
-                    Assignee = name,
-                    IsCompleted = false
+                    Assignee = name
                 });
             }
         }

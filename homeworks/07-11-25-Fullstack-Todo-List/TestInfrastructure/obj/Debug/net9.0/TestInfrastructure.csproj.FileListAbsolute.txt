@@ -1,0 +1,17 @@
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/bin/Debug/net9.0/appsettings.json
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/bin/Debug/net9.0/TestInfrastructure.deps.json
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/bin/Debug/net9.0/TestInfrastructure.dll
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/bin/Debug/net9.0/TestInfrastructure.pdb
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/bin/Debug/net9.0/AppServices.dll
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/bin/Debug/net9.0/AppServices.pdb
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.csproj.AssemblyReference.cache
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.AssemblyInfoInputs.cache
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.AssemblyInfo.cs
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.csproj.CoreCompileInputs.cache
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.sourcelink.json
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfr.78E614CB.Up2Date
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.dll
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/refint/TestInfrastructure.dll
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/TestInfrastructure.pdb
+/home/laflame/Documents/Temp/htl-2025-26-5th/20-fullstack-starter/TestInfrastructure/obj/Debug/net9.0/ref/TestInfrastructure.dll

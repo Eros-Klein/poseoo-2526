@@ -1,0 +1,264 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServicesTests/AppServicesTests.csproj": {}
+  },
+  "projects": {
+    "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/AppServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/AppServices.csproj",
+        "projectName": "AppServices",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/AppServices.csproj",
+        "packagesPath": "/home/laflame/.nuget/packages/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/laflame/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "OneOf": {
+              "target": "Package",
+              "version": "[3.0.271, )"
+            },
+            "OneOf.SourceGenerator": {
+              "target": "Package",
+              "version": "[3.0.271, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServicesTests/AppServicesTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServicesTests/AppServicesTests.csproj",
+        "projectName": "AppServicesTests",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServicesTests/AppServicesTests.csproj",
+        "packagesPath": "/home/laflame/.nuget/packages/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServicesTests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/laflame/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/AppServices.csproj": {
+                "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/AppServices.csproj"
+              },
+              "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/TestInfrastructure/TestInfrastructure.csproj": {
+                "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/TestInfrastructure/TestInfrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[18.0.0, )"
+            },
+            "OneOf": {
+              "target": "Package",
+              "version": "[3.0.271, )"
+            },
+            "OneOf.SourceGenerator": {
+              "target": "Package",
+              "version": "[3.0.271, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/TestInfrastructure/TestInfrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/TestInfrastructure/TestInfrastructure.csproj",
+        "projectName": "TestInfrastructure",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/TestInfrastructure/TestInfrastructure.csproj",
+        "packagesPath": "/home/laflame/.nuget/packages/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/TestInfrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/laflame/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/AppServices.csproj": {
+                "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/homeworks/07-11-25-Fullstack-Todo-List/AppServices/AppServices.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

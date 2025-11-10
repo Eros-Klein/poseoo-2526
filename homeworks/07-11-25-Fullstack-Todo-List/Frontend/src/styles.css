@@ -1,1 +1,155 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Titillium+Web:wght@400;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --surface-primary: rgba(12, 14, 34, 0.92);
+  --surface-elevated: rgba(20, 24, 54, 0.8);
+  --surface-border: rgba(0, 255, 213, 0.22);
+  --accent-cyan: #00ffd5;
+  --accent-magenta: #ff00c3;
+  --accent-amber: #ffe500;
+  --text-primary: #f8fbff;
+  --text-muted: rgba(248, 251, 255, 0.6);
+  --backdrop: radial-gradient(circle at 20% 20%, rgba(0, 255, 213, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(255, 0, 195, 0.22), transparent 60%),
+    radial-gradient(circle at 50% 90%, rgba(0, 102, 255, 0.24), transparent 65%);
+  font-family: 'Titillium Web', 'Eurostile', 'Segoe UI', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    var(--backdrop),
+    linear-gradient(135deg, #050612 0%, #090b1c 50%, #06050f 100%);
+  color: var(--text-primary);
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 3.5rem 1.5rem;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(0, 255, 213, 0.14), transparent 35%, rgba(255, 0, 195, 0.18)),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 45%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
+}
+
+app-root,
+app-to-do-list,
+app-to-do-add,
+app-dummies-list {
+  width: min(1080px, 100%);
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Orbitron', 'Titillium Web', sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-shadow:
+    0 0 6px rgba(0, 255, 213, 0.6),
+    0 0 22px rgba(255, 0, 195, 0.3);
+}
+
+p,
+li,
+label,
+input,
+button,
+a {
+  font-family: inherit;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 213, 0.4);
+}
+
+a:hover {
+  color: var(--accent-amber);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background: rgba(6, 7, 18, 0.6);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 255, 213, 0.14);
+  padding: 2.5rem clamp(1.5rem, 4vw, 3rem);
+  border-radius: 1.4rem;
+  box-shadow:
+    0 24px 48px -30px rgba(0, 0, 0, 0.9),
+    0 0 36px -20px rgba(0, 255, 213, 0.7);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(0, 255, 213, 0.12);
+  border: 1px solid rgba(0, 255, 213, 0.35);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.neon-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 213, 0.6), transparent);
+  opacity: 0.6;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 2.5rem 1rem;
+  }
+
+  main {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -7,6 +7,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
+import { ToDo } from '../../models/to-do';
 import { ToDoLogic } from '../../models/to-do-logic';
 
 export interface ToDoIdPut$Params {
@@ -14,7 +15,7 @@ export interface ToDoIdPut$Params {
       body: ToDoLogic
 }
 
-export function toDoIdPut(http: HttpClient, rootUrl: string, params: ToDoIdPut$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+export function toDoIdPut(http: HttpClient, rootUrl: string, params: ToDoIdPut$Params, context?: HttpContext): Observable<StrictHttpResponse<ToDo>> {
   const rb = new RequestBuilder(rootUrl, toDoIdPut.PATH, 'put');
   if (params) {
     rb.path('id', params.id, {});
@@ -22,11 +23,11 @@ export function toDoIdPut(http: HttpClient, rootUrl: string, params: ToDoIdPut$P
   }
 
   return http.request(
-    rb.build({ responseType: 'text', accept: '*/*', context })
+    rb.build({ responseType: 'json', accept: 'application/json', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      return r as StrictHttpResponse<ToDo>;
     })
   );
 }

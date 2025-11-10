@@ -11,17 +11,26 @@ public static class ToDoEndpoints
     {
         var api = app.MapGroup("/to-do");
 
-        api.MapGet("/", HandleQuery);
+        api.MapGet("/", HandleQuery)
+            .Produces<List<ToDo>>(200);
 
-        api.MapGet("/{id}", HandleIdQuery);
+        api.MapGet("/{id}", HandleIdQuery)
+            .Produces(404)
+            .Produces<ToDo>(200);
 
-        api.MapPost("/", HandleToDoCreation);
+        api.MapPost("/", HandleToDoCreation)
+            .Produces(400)
+            .Produces<ToDo>(200);
 
-        api.MapPut("/{id}", HandleCompletetionToggle);
+        api.MapPut("/{id}", HandleCompletetionToggle)
+            .Produces<ToDo>(200);
 
-        api.MapPatch("/{id}", HandleToDoEntryUpdate);
+        api.MapPatch("/{id}", HandleToDoEntryUpdate)
+            .Produces<ToDo>(200);
 
-        api.MapDelete("/{id}", HandleToDoEntryDelete);
+        api.MapDelete("/{id}", HandleToDoEntryDelete)
+            .Produces(404)
+            .Produces(204);
 
         return api;
     }

@@ -7,13 +7,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
+import { ToDo } from '../../models/to-do';
 
 export interface ToDoGet$Params {
   assignee?: string;
   completitionStatus?: boolean;
 }
 
-export function toDoGet(http: HttpClient, rootUrl: string, params?: ToDoGet$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+export function toDoGet(http: HttpClient, rootUrl: string, params?: ToDoGet$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<ToDo>>> {
   const rb = new RequestBuilder(rootUrl, toDoGet.PATH, 'get');
   if (params) {
     rb.query('assignee', params.assignee, {});
@@ -21,11 +22,11 @@ export function toDoGet(http: HttpClient, rootUrl: string, params?: ToDoGet$Para
   }
 
   return http.request(
-    rb.build({ responseType: 'text', accept: '*/*', context })
+    rb.build({ responseType: 'json', accept: 'application/json', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      return r as StrictHttpResponse<Array<ToDo>>;
     })
   );
 }

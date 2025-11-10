@@ -1,0 +1,87 @@
+<main class="todo-view">
+  <header class="view-header">
+    <div>
+      <span class="pill">Active Contracts</span>
+      <h2>Mission Board</h2>
+      <p class="subtitle">Track current ops and dispatch new gigs across Night City.</p>
+    </div>
+    <a class="add-link" [routerLink]="['/list/add']">
+      <span>Launch new gig</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 19L19 5M19 5H8M19 5V16" />
+      </svg>
+    </a>
+  </header>
+
+  <div class="neon-divider"></div>
+
+  @if (todos(); as list) {
+    <ul class="todo-grid">
+      @for (todo of list; track todo.id) {
+        <li class="todo-card" [class.is-editing]="editingId() === todo.id">
+          <div class="card-glow"></div>
+          @if (editingId() === todo.id) {
+            <form class="edit-form" #editForm="ngForm" (ngSubmit)="saveEdit()">
+              <div class="field">
+                <label [attr.for]="'edit-title-' + todo.id">Gig Title</label>
+                <input
+                  [id]="'edit-title-' + todo.id"
+                  type="text"
+                  name="title"
+                  required
+                  [(ngModel)]="editTitleModel"
+                  placeholder="Enter new objective"
+                  [disabled]="savePending()"
+                />
+              </div>
+
+              <div class="field">
+                <label [attr.for]="'edit-assignee-' + todo.id">Lead Operative</label>
+                <input
+                  [id]="'edit-assignee-' + todo.id"
+                  type="text"
+                  name="assignee"
+                  required
+                  [(ngModel)]="editAssigneeModel"
+                  placeholder="Identify operative"
+                  [disabled]="savePending()"
+                />
+              </div>
+
+              <div class="edit-actions">
+                <button type="submit" [disabled]="savePending()">Save changes</button>
+                <button type="button" class="ghost" (click)="cancelEdit()" [disabled]="savePending()">Cancel</button>
+              </div>
+            </form>
+          } @else {
+            <header>
+              <span class="todo-tag">Assignee</span>
+              <span class="todo-assignee">{{ todo.assignee }}</span>
+            </header>
+            <p class="todo-title">{{ todo.title }}</p>
+            <footer>
+              <span class="card-pip"></span>
+              <span class="card-status">Awaiting execution</span>
+            </footer>
+            <div class="card-actions">
+              <button type="button" class="ghost" (click)="startEdit(todo)">Edit</button>
+              <button
+                type="button"
+                class="danger"
+                (click)="removeTodo(todo.id)"
+                [disabled]="deletePendingId() === todo.id"
+              >
+                @if (deletePendingId() === todo.id) { Removing... } @else { Remove }
+              </button>
+            </div>
+          }
+        </li>
+      }
+    </ul>
+  } @else {
+    <section class="loading-state">
+      <div class="loader-ring"></div>
+      <p>Syncing with the network...</p>
+    </section>
+  }
+</main>

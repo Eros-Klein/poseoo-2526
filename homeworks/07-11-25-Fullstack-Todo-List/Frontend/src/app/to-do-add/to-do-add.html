@@ -1,0 +1,72 @@
+<main class="add-view">
+  <header class="view-header">
+    <div>
+      <span class="pill">Deploy Contract</span>
+      <h2>Launch New Gig</h2>
+      <p class="subtitle">Encode intel for the crew and assign the lead operative.</p>
+    </div>
+    <a class="back-link" [routerLink]="['/list']">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M19 12H5M5 12L10 7M5 12L10 17" />
+      </svg>
+      Back to board
+    </a>
+  </header>
+
+  <div class="neon-divider"></div>
+
+  <section class="launch-shell">
+    <header>
+      <div>
+        <h3>Mission parameters</h3>
+        <span>Calibrate payload before dispatch</span>
+      </div>
+      <span class="status">Online</span>
+    </header>
+
+    <div class="mission-map"></div>
+
+    <form (ngSubmit)="addTodo()" #todoForm="ngForm" class="todo-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="title">
+            Gig Title
+            <span>Define the target objective</span>
+          </label>
+          <div class="form-control">
+            <input
+              id="title"
+              type="text"
+              name="title"
+              [(ngModel)]="title"
+              placeholder="e.g. Pulsewave courier intercept"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="assignee">
+            Lead Operative
+            <span>Assign the primary runner</span>
+          </label>
+          <div class="form-control">
+            <input
+              id="assignee"
+              type="text"
+              name="assignee"
+              [(ngModel)]="assignee"
+              placeholder="e.g. V. Santiago"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="reset" class="secondary" (click)="todoForm.reset()">Clear</button>
+        <button type="submit" class="primary" [disabled]="todoForm.invalid">Deploy gig</button>
+      </div>
+    </form>
+  </section>
+</main>

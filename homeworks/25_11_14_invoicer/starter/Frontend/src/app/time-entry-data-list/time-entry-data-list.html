@@ -1,0 +1,29 @@
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Employee</th>
+            <th>Project</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (timeEntry of timeEntries(); track $index) {
+            <tr>
+                <td>{{timeEntry.date}}</td>
+                <td>{{timeEntry.employee?.employeeName}}</td>
+                <td>{{timeEntry.project?.projectCode}}</td>
+                <td>{{timeEntry.startTime}}</td>
+                <td>{{timeEntry.endTime}}</td>
+                <td>{{timeEntry.description}}</td>
+                <td>
+                    <button (click)="editEntry(timeEntry.id!)">Edit</button>
+                    <button (click)="deleteEntry(timeEntry.id!)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

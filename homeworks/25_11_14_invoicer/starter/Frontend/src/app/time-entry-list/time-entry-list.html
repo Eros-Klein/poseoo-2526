@@ -1,0 +1,5 @@
+<div>
+    <h1>Time Entries</h1>
+    <app-time-entry-list-control-panel [(descriptions)]="description" [(projects)]="project" [(employees)]="employee" (projectsChange)="onChange()" (employeesChange)="onChange()" (descriptionsChange)="onDescriptionChange()" />
+    <app-time-entry-data-list (onDelete)="onChange()" [timeEntries]="showTimeEntries" />
+</div>

@@ -1,0 +1,28 @@
+input, select {
+    width: 100%;
+    border-radius: 0.25rem;
+    font-size: large;
+    padding: 3px;
+    background-color: white;
+    border-color: aliceblue;
+    outline: none;
+}
+
+form {
+    width: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 5rem;
+    flex-direction: column;
+}
+
+button {
+    padding: 15px;
+    border-radius: 0.5rem;
+    font-size: 20px;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Edit Time Entry</h1>
+    @if (!timeEntry()) {
+        <h1>Loading...</h1>
+    }
+    @else {
+        <form>
+            <label for="date">Date:</label>
+            <input name="date" [(ngModel)]="date"  id="date" type="date"/>
+            <label for="start">Start Time:</label>
+            <input name="start" [(ngModel)]="startTime"  id="start" type="time"/>
+            <label for="end">End Time:</label>
+            <input name="end" [(ngModel)]="endTime" id="end" type="time"/>
+            <label for="emp">Employee:</label>
+            <select name="emp" [(ngModel)]="employee" id="emp" type="date">
+                @for (emp of allEmployees(); track $index) {
+                    <option value="{{emp.id}}">{{emp.employeeName}}</option>
+                }
+            </select>
+            <label for="proj">Project:</label>
+            <select name="proj" [(ngModel)]="project"  id="proj" type="date">
+                @for (proj of allProjects(); track $index) {
+                    <option value="{{proj.id}}">{{proj.projectCode}}</option>
+                }
+            </select>
+            <label for="desc">Description:</label>
+            <input name="desc" [(ngModel)]="description"  id="desc" type="text"/>
+            <button (click)="onSave()">save</button>
+            <button (click)="navigateHome()">cancel</button>
+        </form>
+    }
+</div>

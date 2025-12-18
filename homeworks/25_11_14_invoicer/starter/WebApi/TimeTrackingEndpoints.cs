@@ -129,7 +129,7 @@ public static partial class TimeTrackingEndpoints
         var result = await context.TimeEntries
         .Include(te => te.Employee)
         .Include(te => te.Project)
-        .FirstOrDefaultAsync(te => te.Id == id); ;
+        .FirstOrDefaultAsync(te => te.Id == id);
 
         if (result == null)
         {

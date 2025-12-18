@@ -1,0 +1,101 @@
+<div class="edit-container">
+  <h1>Edit Product</h1>
+
+  @if (loading()) {
+    <div class="loading">
+      <p>Loading customer data...</p>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="error">
+      <p>{{ error() }}</p>
+    </div>
+  }
+
+  @if (!loading() && !error()) {
+    <form (submit)="onSubmit($event)">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            [field]="productForm.productName"
+            [class.invalid]="productForm.productName().touched() && productForm.productName().invalid()"
+          />
+          @if (productForm.productName().touched() && productForm.productName().invalid()) {
+            <div class="error-messages">
+              @for (error of productForm.productName().errors(); track error) {
+                <span class="error-message">{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="productCode">ProductCode</label>
+          <input
+            type="text"
+            id="productCode"
+            [field]="productForm.productCode"
+            [class.invalid]="productForm.productCode().touched() && productForm.productCode().invalid()"
+          />
+          @if (productForm.productCode().touched() && productForm.productCode().invalid()) {
+            <div class="error-messages">
+              @for (error of productForm.productCode().errors(); track error) {
+                <span class="error-message">{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="ppu">Price per Unit:</label>
+          <input
+            type="number"
+            id="ppu"
+            step="0.01"
+            [field]="productForm.pricePerUnit"
+            [class.invalid]="productForm.pricePerUnit().touched() && productForm.pricePerUnit().invalid()"
+          />
+          @if (productForm.pricePerUnit().touched() && productForm.pricePerUnit().invalid()) {
+            <div class="error-messages">
+              @for (error of productForm.pricePerUnit().errors(); track error) {
+                <span class="error-message">{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="categories">Category:</label>
+
+          <select [field]="productForm.category" [class.invalid]="productForm.category().touched() && productForm.category().invalid()">
+            @for (item of categories(); track $index) {
+              <option [id]="item">{{item}}</option>
+            }
+            <option id="">None</option>
+          </select>
+          @if (productForm.category().touched() && productForm.category().invalid()) {
+            <div class="error-messages">
+              @for (error of productForm.category().errors(); track error) {
+                <span class="error-message">{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+
+      <div class="button-group">
+        <button type="submit" class="save-btn" [disabled]="!productForm().valid() || saving()">
+          {{ saving() ? 'Saving...' : 'Save' }}
+        </button>
+        <button type="button" class="cancel-btn" (click)="cancel()" [disabled]="saving()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  }
+</div>

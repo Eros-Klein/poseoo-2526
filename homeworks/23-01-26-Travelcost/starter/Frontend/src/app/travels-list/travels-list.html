@@ -1,0 +1,60 @@
+<div class="page-header">
+  <div>
+    <h1>Travels</h1>
+    <p class="subtitle">All uploaded travel claims</p>
+  </div>
+
+  <div class="actions">
+    <a class="button" routerLink="/travels/upload">Upload travel file</a>
+    
+    <!-- Trigger loading, disable while loading -->
+    <button class="button secondary">Refresh</button>
+  </div>
+</div>
+
+@if (isLoading()) {
+  <p class="hint">Loading…</p>
+}
+
+
+
+<!-- Error message, display only if error -->
+ @if (error().length > 0) {
+  <div class="alert error">
+    <strong>Error:</strong> {{ error() }}
+  </div>
+ }
+
+<!-- Empty state, display only if no travels -->
+ @if (!isLoading() && travelEntries().length === 0) {
+  <div class="empty">
+    <p>No travels yet.</p>
+    <p class="hint">Upload a travel file to get started.</p>
+  </div>
+}
+  <div class="card">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-id">Id</th>
+          <th>Traveler</th>
+          <th>Purpose</th>
+          <th class="col-actions"></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (travel of travelEntries(); track $index) {
+          <tr>
+            <!-- Add data binding -->
+            <td class="mono">{{ travel.id }}</td>
+            <td>{{ travel.travelerName }}</td>
+            <td>{{ travel.purpose }}</td>
+            <td class="right">
+              <!-- Replace 42 with actual travel id -->
+              <a class="button small" [routerLink]="['/travels', travel.id]">Details</a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>

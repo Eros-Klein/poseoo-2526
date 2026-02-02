@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LxLUWuRcngQ=",
+  "success": true,
+  "projectFilePath": "/home/laflame/Documents/School-Git-2025/poseoo/courseworks/2025-12-12-Dotnet-Splitting/2025-12-12-Dotnet-Splitting.csproj",
+  "expectedPackageFiles": [
+    "/home/laflame/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.0/microsoft.aspnetcore.app.ref.10.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

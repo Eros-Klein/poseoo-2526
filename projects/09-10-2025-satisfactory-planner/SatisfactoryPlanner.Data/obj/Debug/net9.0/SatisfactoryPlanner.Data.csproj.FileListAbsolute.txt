@@ -1,0 +1,16 @@
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/bin/Debug/net9.0/appsettings.json
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/bin/Debug/net9.0/SatisfactoryPlanner.Data.deps.json
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/bin/Debug/net9.0/SatisfactoryPlanner.Data.runtimeconfig.json
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/bin/Debug/net9.0/SatisfactoryPlanner.Data.dll
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/bin/Debug/net9.0/SatisfactoryPlanner.Data.pdb
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.csproj.AssemblyReference.cache
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.GeneratedMSBuildEditorConfig.editorconfig
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.AssemblyInfoInputs.cache
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.AssemblyInfo.cs
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.csproj.CoreCompileInputs.cache
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.sourcelink.json
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.dll
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/refint/SatisfactoryPlanner.Data.dll
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.pdb
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/SatisfactoryPlanner.Data.genruntimeconfig.cache
+/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/Debug/net9.0/ref/SatisfactoryPlanner.Data.dll

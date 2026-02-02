@@ -1,0 +1,18 @@
+<div class="customer-grid">
+  <div class="grid-cell checkbox-cell">
+    <input type="checkbox" [checked]="isSelected()" (change)="toggleSelection(customer.id!)" class="customer-checkbox">
+  </div>
+  <input type="text" class="grid-cell" [field]="customerForm.name" />
+  <input type="date" class="grid-cell" [field]="customerForm.dateOfBirth" />
+  <input type="number" class="grid-cell right-align" [field]="customerForm.revenue" />
+  <input type="number" class="grid-cell right-align" [field]="customerForm.customerValue" />
+  <div class="grid-cell">
+    <input type="checkbox" [field]="customerForm.isActive" />
+  </div>
+  <div class="grid-cell">
+    @if(!inEdit()){
+    <button (click)="this.inEdit.set(true)">Edit</button>
+    <button (click)="deleteCustomer(customer.id)" class="delete-btn">Delete</button>
+    }
+  </div>
+</div>

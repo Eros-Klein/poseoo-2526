@@ -1,0 +1,6 @@
+-Exercises.db
+-cash.db
+-cashregister.db
+-game.db
+-planner.db
+-wm.db

@@ -4,14 +4,14 @@
     "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/SatisfactoryPlanner.UI.csproj": {}
   },
   "projects": {
-    "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/SatisfactoryPlanner.UI.csproj": {
+    "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/SatisfactoryPlanner.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/SatisfactoryPlanner.UI.csproj",
-        "projectName": "SatisfactoryPlanner.UI",
-        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/SatisfactoryPlanner.UI.csproj",
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/SatisfactoryPlanner.Data.csproj",
+        "projectName": "SatisfactoryPlanner.Data",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/SatisfactoryPlanner.Data.csproj",
         "packagesPath": "/home/laflame/.nuget/packages/",
-        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/obj/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/laflame/.nuget/NuGet/NuGet.Config"
@@ -44,7 +44,100 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/SatisfactoryPlanner.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/SatisfactoryPlanner.UI.csproj",
+        "projectName": "SatisfactoryPlanner.UI",
+        "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/SatisfactoryPlanner.UI.csproj",
+        "packagesPath": "/home/laflame/.nuget/packages/",
+        "outputPath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/laflame/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/SatisfactoryPlanner.Data.csproj": {
+                "projectPath": "/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.Data/SatisfactoryPlanner.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
             "Avalonia": {
+              "target": "Package",
+              "version": "[11.3.6, )"
+            },
+            "Avalonia.Controls.DataGrid": {
               "target": "Package",
               "version": "[11.3.6, )"
             },
@@ -67,6 +160,14 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.2.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.9, )"
             }
           },
           "imports": [

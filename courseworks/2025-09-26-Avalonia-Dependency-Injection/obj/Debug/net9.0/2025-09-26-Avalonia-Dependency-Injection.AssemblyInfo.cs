@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("2025-09-26-Avalonia-Dependency-Injection")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa6bf86de7ee8eea3bb2e1e91a1b3275efe0739b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a30ef1f3c04928c47f959cb73327a612610538d")]
 [assembly: System.Reflection.AssemblyProductAttribute("2025-09-26-Avalonia-Dependency-Injection")]
 [assembly: System.Reflection.AssemblyTitleAttribute("2025-09-26-Avalonia-Dependency-Injection")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

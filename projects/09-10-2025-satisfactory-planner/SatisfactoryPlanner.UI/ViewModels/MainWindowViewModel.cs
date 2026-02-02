@@ -1,6 +1,9 @@
-﻿namespace SatisfactoryPlanner.UI.ViewModels;
+﻿using SatisfactoryPlanner.Data;
 
-public partial class MainWindowViewModel : ViewModelBase
+namespace SatisfactoryPlanner.UI.ViewModels;
+
+public partial class MainWindowViewModel(MachineListViewModel machineListViewModel, ApplicationDataContext applicationDataContext) : ViewModelBase
 {
-    public string Greeting { get; } = "Welcome to Avalonia!";
+    public ApplicationDataContext ApplicationDataContext { get; } = applicationDataContext;
+    public MachineListViewModel MachineListViewModel { get; } = machineListViewModel;
 }

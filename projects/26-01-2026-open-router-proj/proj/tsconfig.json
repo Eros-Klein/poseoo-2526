@@ -1,0 +1,30 @@
+{
+  // Simple tsconfig for a script to test AI things
+
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+    "types": ["node"],
+
+    // Enable Node.js environment and allow ES features
+    "lib": ["esnext"],
+
+    // Debugging & Output
+    "sourceMap": true,
+    "declaration": false,
+    "declarationMap": false,
+
+    // Typing & Strictness (good for light scripts)
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // No JSX needed for testing scripts
+    // "jsx": "react-jsx",
+
+    // Keep things simple for experimentation
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  }
+}

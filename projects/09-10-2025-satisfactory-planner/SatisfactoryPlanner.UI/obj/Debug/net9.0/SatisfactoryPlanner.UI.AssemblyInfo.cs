@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SatisfactoryPlanner.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f97e599ad0ee01e50b7f6c5cf9d39dbf13f83fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a30ef1f3c04928c47f959cb73327a612610538d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SatisfactoryPlanner.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SatisfactoryPlanner.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

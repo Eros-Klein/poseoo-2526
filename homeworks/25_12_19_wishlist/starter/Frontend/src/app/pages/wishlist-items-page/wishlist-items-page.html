@@ -1,0 +1,47 @@
+<section class="card items">
+  <h1>Wishlist items</h1>
+
+  @if (error().length > 0) {
+  <div class="message error">An error has occurred</div>
+  }
+  @if (loading()) {
+  <div class="message">Loading…</div>
+  }
+
+  @if (!loading() && !(error().length > 0)) {
+  <!-- Conditionally show the grid once loaded; only if there are items -->
+  @if (wishlistItems().length > 0) {
+  <div class="grid">
+    <div class="head">Item</div>
+    <div class="head">Category</div>
+    <div class="head">Bought</div>
+    <div class="head">Actions</div>
+
+    <!-- Add a row for each item -->
+    @for (item of wishlistItems(); track $index) {
+    <div class="cell">
+      <!-- Add "bought" class if the item is bought -->
+      <span>{{item.itemName}}</span>
+    </div>
+    <div class="cell">{{item.category?.name}}</div>
+    <div class="cell">{{item.bought? 'yes' : 'no'}}</div>
+    <div class="cell actions">
+      <!--
+        Conditionally display "Mark bought" or "Unmark"
+        Disable the button while saving operations (marking as bought, deleting) are in progress
+      -->
+      <button type="button" class="btn">
+        Mark bought <!-- or "Unmark" -->
+      </button>
+      <!-- Disable while saving operations are in progress -->
+      <button type="button" class="btn danger">Delete</button>
+    </div>
+}
+  </div>
+}
+@else {
+  <div class="message">No items yet. Add one using “Add item”.</div>
+}
+
+}
+</section>

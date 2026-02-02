@@ -1,0 +1,53 @@
+@if (message().sender !== '---Tool-Call---') {
+<div class="flex flex-col mb-3">
+  @if (message().role === 'system') {
+  <div class="flex justify-center w-full">
+    <div class="bg-gray-800 border border-gray-600 rounded-lg px-4 sm:px-6 py-2 sm:py-3 max-w-2xl w-full">
+      <div class="flex items-center justify-center gap-2 mb-1">
+        <span class="font-medium text-gray-300 text-xs sm:text-sm">{{ message().sender }}</span>
+        <span class="text-xs text-gray-500">{{ formatTime(message().created_at) }}</span>
+      </div>
+      <p class="text-gray-300 break-words text-sm sm:text-base text-center">{{ message().content }}</p>
+    </div>
+  </div>
+  }
+  @else if (message().role === 'user') {
+  <div class="flex items-end gap-2 sm:gap-3 justify-end">
+    <div class="flex-1 max-w-xs sm:max-w-xl flex justify-end">
+      <div class="bg-gray-600 rounded-lg rounded-br-none px-3 sm:px-4 py-2 sm:py-3 border border-gray-500">
+        <div class="flex items-center gap-1 sm:gap-2 mb-1">
+          <span class="font-medium text-gray-100 text-xs sm:text-sm">{{ message().sender }}</span>
+          <span class="text-xs text-gray-400">{{ formatTime(message().created_at) }}</span>
+        </div>
+        <p class="text-gray-100 break-words text-sm sm:text-base">{{ message().content }}</p>
+      </div>
+    </div>
+    <div class="flex-shrink-0">
+      <div
+        class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-600 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
+        {{ message().sender.charAt(0).toUpperCase() }}
+      </div>
+    </div>
+  </div>
+  }
+  @else {
+  <div class="flex items-end gap-2 sm:gap-3">
+    <div class="flex-shrink-0">
+      <div
+        class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-700 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
+        {{ message().sender.charAt(0).toUpperCase() }}
+      </div>
+    </div>
+    <div class="flex-1 max-w-xs sm:max-w-xl">
+      <div class="bg-gray-700 rounded-lg rounded-bl-none px-3 sm:px-4 py-2 sm:py-3 border border-gray-600">
+        <div class="flex items-center gap-1 sm:gap-2 mb-1">
+          <span class="font-medium text-gray-200 text-xs sm:text-sm">{{ message().sender }}</span>
+          <span class="text-xs text-gray-500">{{ formatTime(message().created_at) }}</span>
+        </div>
+        <p class="text-gray-200 break-words text-sm sm:text-base">{{ message().content }}</p>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+}

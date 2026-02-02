@@ -1,6 +1,6 @@
 namespace SatisfactoryPlanner.UI.ViewModels;
 
-public class DrawerViewModel
+public class DrawerViewModel : ViewModelBase
 {
     
 }

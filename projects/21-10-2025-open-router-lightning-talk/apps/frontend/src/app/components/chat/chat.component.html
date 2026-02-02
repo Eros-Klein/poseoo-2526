@@ -1,0 +1,68 @@
+<div class="min-h-full flex items-center justify-center p-2 sm:p-4">
+  <div class="w-full max-w-4xl bg-gray-800 rounded-lg shadow-2xl overflow-hidden flex flex-col h-[70vh] sm:h-[85vh] border border-gray-700">
+
+    <!-- Header -->
+    <div class="bg-gray-800 border-b border-gray-700 text-white p-4 sm:p-6">
+      <div class="flex items-center justify-between">
+        <div class="min-w-0 flex-1">
+          <h1 class="text-xl sm:text-2xl font-semibold text-white truncate">Live Chat</h1>
+          <p class="text-gray-400 text-xs sm:text-sm mt-1 hidden sm:block">Real-time messaging via SSE</p>
+        </div>
+        <div class="flex-shrink-0 ml-2">
+          <app-connection-status [isConnected]="isConnected()" />
+        </div>
+      </div>
+    </div>
+
+    <app-error-alert [error]="error()" />
+
+    <!-- Messages Container -->
+    <div id="messages-container" class="flex-1 overflow-y-auto gap-3 p-3 sm:p-6 bg-gray-900">
+      @if (messages().concat(builtMessage()).length === 0) {
+      <div class="flex items-center justify-center h-full text-gray-500">
+        <div class="text-center px-4">
+          <svg class="mx-auto h-8 w-8 sm:h-12 sm:w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+          <p class="mt-2 sm:mt-4 text-base sm:text-lg font-medium text-gray-400">No messages yet</p>
+          <p class="text-xs sm:text-sm text-gray-500">Send a message to get started!</p>
+        </div>
+      </div>
+      }
+
+      @for (message of messages().concat(builtMessage()); track message.id) {
+        @if (message.content.length > 0) {
+          <app-message-item [message]="message" />
+        }
+      }
+    </div>
+
+    <!-- Input Area -->
+    <div class="border-t border-gray-700 bg-gray-800 p-3 sm:p-6">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-3">
+        <div class="flex-shrink-0">
+          <label class="block text-sm font-medium text-gray-300 mb-1">Your name</label>
+          <input type="text" [(ngModel)]="senderName"
+            class="w-full sm:w-32 px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+            placeholder="Name" />
+        </div>
+      </div>
+
+      <div class="flex gap-2 sm:gap-3">
+        <input type="text" [(ngModel)]="newMessage" (keypress)="handleKeyPress($event)" [disabled]="!isConnected()"
+          class="flex-1 px-3 sm:px-4 py-2 sm:py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent disabled:bg-gray-600 disabled:cursor-not-allowed text-sm sm:text-base"
+          placeholder="Type your message..." />
+        <button (click)="sendMessage()" [disabled]="!isConnected() || !newMessage().trim()"
+          class="px-4 sm:px-6 py-2 sm:py-3 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center gap-1 sm:gap-2 border border-gray-600">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg>
+          <span class="hidden sm:inline">Send</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

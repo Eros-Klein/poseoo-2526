@@ -1,9 +1,14 @@
+using System.ComponentModel.Design;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using SatisfactoryPlanner.Data;
 using SatisfactoryPlanner.UI.ViewModels;
 using SatisfactoryPlanner.UI.Views;
 
@@ -23,10 +28,23 @@ public partial class App : Application
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = new MainWindowViewModel(),
-            };
+
+            var configBuilder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            var configuration = configBuilder.Build();
+            
+            var cdiManager = new ServiceCollection();
+            
+            cdiManager.AddTransient<MainWindowViewModel>();
+            cdiManager.AddTransient<MainWindow>();
+            cdiManager.AddTransient<MachineListViewModel>();
+            cdiManager.AddTransient<MachineListView>();
+            cdiManager.AddDbContextFactory<ApplicationDataContext>(options =>
+                options.UseSqlite(configuration.GetConnectionString("SatisfactoryPlanner")));
+
+            var service = cdiManager.BuildServiceProvider();
+            
+            desktop.MainWindow = service.GetRequiredService<MainWindow>();
         }
 
         base.OnFrameworkInitializationCompleted();

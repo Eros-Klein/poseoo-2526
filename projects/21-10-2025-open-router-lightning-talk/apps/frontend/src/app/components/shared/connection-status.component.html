@@ -1,0 +1,15 @@
+<div class="flex items-center gap-1 sm:gap-2">
+  <div class="relative">
+    <span class="flex h-2 w-2 sm:h-3 sm:w-3">
+      @if (isConnected()) {
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 sm:h-3 sm:w-3 bg-green-500"></span>
+      } @else {
+      <span class="relative inline-flex rounded-full h-2 w-2 sm:h-3 sm:w-3 bg-red-500"></span>
+      }
+    </span>
+  </div>
+  <span class="text-xs sm:text-sm text-gray-300">
+    {{ isConnected() ? 'Connected' : 'Disconnected' }}
+  </span>
+</div>

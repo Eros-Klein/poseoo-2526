@@ -24,5 +24,14 @@ build_property.EnableCodeStyleSeverity =
 [/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/Views/DrawerView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/Views/MachineListView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/laflame/Documents/School-Git-2025/poseoo/projects/09-10-2025-satisfactory-planner/SatisfactoryPlanner.UI/Views/RecipeView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

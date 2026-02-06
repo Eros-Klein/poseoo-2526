@@ -1,0 +1,21 @@
+<div class="stages-container">
+  <div class="header">
+    <h1>Grammy Performance Stages</h1>
+    <p class="subtitle">View all stages and their scheduled performances</p>
+  </div>
+
+  <div class="stages-grid">
+    @for (stage of stages(); track stage.id) {
+      <div class="stage-card" (click)="viewStageDetails(stage.id)">
+        <h2>{{ stage.name }}</h2>
+        <div class="stage-info">
+          <p class="category-count">
+            <strong>{{ stage.categories.length }}</strong> 
+            {{ stage.categories.length === 1 ? 'category' : 'categories' }}
+          </p>
+          <button class="view-button">View Details →</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="stage-detail-container">
+  @if (stage(); as stageData) {
+    <div class="header">
+      <button class="back-button" (click)="goBack()">
+        ← Back to Stages
+      </button>
+      <h1>{{ stageData.name }}</h1>
+      <p class="subtitle">{{ stageData.categories.length }} categories scheduled</p>
+    </div>
+
+    <div class="categories-section">
+      @for (category of stageData.categories; track category.id) {
+        <div class="category-card">
+          <div class="category-header">
+            <h2>{{ category.name }}</h2>
+            <span class="priority-badge" [class.high-priority]="category.priority === PriorityLevel.AcrossGenres">
+              {{ getPriorityLabel(category.priority) }}
+            </span>
+          </div>
+          
+          <div class="category-info">
+            <div class="info-item">
+              <span class="label">Budget:</span>
+              <span class="value">{{ formatCurrency(category.budget) }}</span>
+            </div>
+            @if (category.winner) {
+              <div class="info-item winner-info">
+                <span class="label">Winner:</span>
+                <span class="value winner">🏆 {{ category.winner.name }}</span>
+              </div>
+            }
+          </div>
+
+          <div class="artists-section">
+            <h3>Nominated Artists</h3>
+            <div class="artists-grid">
+              @for (artist of category.artists; track artist.id) {
+                <div class="artist-card" [class.has-performance]="artist.performance">
+                  <div class="artist-header">
+                    <h4 class="artist-name">{{ artist.name }}</h4>
+                    @if (artist.performance) {
+                      <span class="performance-badge">🎵 Performing</span>
+                    }
+                  </div>
+                  @if (artist.performance) {
+                    <div class="performance-info">
+                      <p class="performance-time">
+                        <strong>Performance:</strong> {{ formatDateTime(artist.performance.dateTime) }}
+                      </p>
+                      <p class="performance-budget">
+                        <strong>Budget:</strong> {{ formatCurrency(artist.performance.budget) }}
+                      </p>
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="loading">
+      <p>Loading stage details...</p>
+    </div>
+  }
+</div>

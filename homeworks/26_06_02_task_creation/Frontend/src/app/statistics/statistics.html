@@ -1,0 +1,127 @@
+<div class="statistics-container">
+  <div class="header">
+    <h1>Performance Statistics</h1>
+    <p class="subtitle">Artist performance scores based on budget usage, wins, and nominations</p>
+  </div>
+
+  @if (!hasWinners()) {
+    <div class="no-winners-message">
+      <div class="icon">📊</div>
+      <h2>No Statistics Available</h2>
+      <p>Performance statistics will be available after category winners are announced.</p>
+      <p class="info-text">Statistics are calculated based on:</p>
+      <ul>
+        <li>Budget usage (exceedances and undershoots)</li>
+        <li>Winning categories (with priority weighting)</li>
+        <li>Nominated categories (with priority weighting)</li>
+      </ul>
+    </div>
+  } @else {
+    <div class="statistics-content">
+      <!-- Summary Cards -->
+      <div class="summary-cards">
+        <div class="summary-card">
+          <div class="card-icon">🎵</div>
+          <div class="card-content">
+            <h3>{{ statistics().length }}</h3>
+            <p>Performing Artists</p>
+          </div>
+        </div>
+        
+        <div class="summary-card highlight">
+          <div class="card-icon">🏆</div>
+          <div class="card-content">
+            <h3>{{ statistics()[0]?.artistName || 'N/A' }}</h3>
+            <p>Top Performer</p>
+          </div>
+        </div>
+        
+        <div class="summary-card">
+          <div class="card-icon">📈</div>
+          <div class="card-content">
+            <h3>{{ formatScore(statistics()[0]?.performanceScore || 0) }}</h3>
+            <p>Highest Score</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Table -->
+      <div class="statistics-table-container">
+        <h2>Detailed Rankings</h2>
+        <table class="statistics-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Artist</th>
+              <th>Performance Score</th>
+              <th>Budget Points</th>
+              <th>Winning Categories Points</th>
+              <th>Nominated Categories Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (stat of statistics(); track stat.artistId; let i = $index) {
+              <tr [class]="i < 3 ? 'top-rank' : ''">
+                <td class="rank-cell">
+                  <span class="rank-badge">{{ getRankBadge(i) }}</span>
+                </td>
+                <td class="artist-cell">
+                  <strong>{{ stat.artistName }}</strong>
+                </td>
+                <td class="score-cell">
+                  <span class="score-value" [class]="getScoreClass(stat.performanceScore)">
+                    {{ formatScore(stat.performanceScore) }}
+                  </span>
+                </td>
+                <td class="points-cell">
+                  <span [class.positive]="stat.budgetPoints > 0" [class.negative]="stat.budgetPoints < 0">
+                    {{ stat.budgetPoints > 0 ? '+' : '' }}{{ formatScore(stat.budgetPoints) }}
+                  </span>
+                </td>
+                <td class="points-cell">
+                  <span class="positive">
+                    +{{ formatScore(stat.winningCategoriesPoints) }}
+                  </span>
+                </td>
+                <td class="points-cell">
+                  <span class="neutral">
+                    +{{ formatScore(stat.nominatedCategoriesPoints) }}
+                  </span>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Scoring Explanation -->
+      <div class="explanation-section">
+        <h3>How Scores are Calculated</h3>
+        <div class="explanation-grid">
+          <div class="explanation-card">
+            <h4>💰 Budget Points</h4>
+            <p><strong>Exceedances:</strong> +1 point per 25% over budget (max +10)</p>
+            <p><strong>Undershoots:</strong> -1 point per 25% under budget (max -10)</p>
+          </div>
+          
+          <div class="explanation-card">
+            <h4>🏆 Winning Categories</h4>
+            <p><strong>Across Genres:</strong> 2 points per win</p>
+            <p><strong>Genre Specific:</strong> 1 point per win</p>
+          </div>
+          
+          <div class="explanation-card">
+            <h4>🎤 Nominations</h4>
+            <p><strong>Across Genres:</strong> 0.25 points per nomination</p>
+            <p><strong>Genre Specific:</strong> 0.1 points per nomination</p>
+          </div>
+          
+          <div class="explanation-card">
+            <h4>📊 Final Score</h4>
+            <p>Sum of all factors divided by total number of performing artists</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

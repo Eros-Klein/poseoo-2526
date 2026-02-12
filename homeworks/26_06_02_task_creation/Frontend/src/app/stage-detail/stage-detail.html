@@ -1,67 +1,80 @@
 <div class="stage-detail-container">
-  @if (stage(); as stageData) {
+  <!-- Loading indicator, display only while loading -->
+  <!-- TODO: Show this element only when stage data is being loaded -->
+  <div class="loading">
+    <p>Loading stage details...</p>
+  </div>
+
+  <!-- Error message, display only if error -->
+  <!-- TODO: Implement error handling - show this alert only when API request fails or stage not found -->
+  <div class="alert error">
+    <strong>Error:</strong> {{ 'TODO: Display error message here' }}
+  </div>
+
+  <!-- Main content, display only if stage data is available -->
+  <!-- TODO: Conditionally render this section only when stage data is loaded -->
+  <div class="stage-content">
     <div class="header">
-      <button class="back-button" (click)="goBack()">
+      <!-- TODO: Implement click handler to navigate back to stages list -->
+      <button class="back-button">
         ← Back to Stages
       </button>
-      <h1>{{ stageData.name }}</h1>
-      <p class="subtitle">{{ stageData.categories.length }} categories scheduled</p>
+      <h1>Stage Name</h1>
+      <p class="subtitle">0 categorie/s scheduled</p>
     </div>
 
     <div class="categories-section">
-      @for (category of stageData.categories; track category.id) {
-        <div class="category-card">
-          <div class="category-header">
-            <h2>{{ category.name }}</h2>
-            <span class="priority-badge" [class.high-priority]="category.priority === PriorityLevel.AcrossGenres">
-              {{ getPriorityLabel(category.priority) }}
-            </span>
+      <!-- TODO: Loop through stage.categories array -->
+      <!-- For each category, display a category card with the following structure -->
+      <div class="category-card">
+        <div class="category-header">
+          <h2>Category Name</h2>
+          <!-- TODO: Add conditional class 'high-priority' if category.priority === PriorityLevel.AcrossGenres -->
+          <span class="priority-badge">
+            Genre
+          </span>
+        </div>
+        
+        <div class="category-info">
+          <div class="info-item">
+            <span class="label">Budget:</span>
+            <!-- TODO: Format budget as currency (USD format) -->
+            <span class="value">$0.00</span>
           </div>
-          
-          <div class="category-info">
-            <div class="info-item">
-              <span class="label">Budget:</span>
-              <span class="value">{{ formatCurrency(category.budget) }}</span>
-            </div>
-            @if (category.winner) {
-              <div class="info-item winner-info">
-                <span class="label">Winner:</span>
-                <span class="value winner">🏆 {{ category.winner.name }}</span>
-              </div>
-            }
+          <!-- TODO: Display winner info only if category.winner exists -->
+          <div class="info-item winner-info">
+            <span class="label">Winner:</span>
+            <span class="value winner">🏆 Artist Name</span>
           </div>
+        </div>
 
-          <div class="artists-section">
-            <h3>Nominated Artists</h3>
-            <div class="artists-grid">
-              @for (artist of category.artists; track artist.id) {
-                <div class="artist-card" [class.has-performance]="artist.performance">
-                  <div class="artist-header">
-                    <h4 class="artist-name">{{ artist.name }}</h4>
-                    @if (artist.performance) {
-                      <span class="performance-badge">🎵 Performing</span>
-                    }
-                  </div>
-                  @if (artist.performance) {
-                    <div class="performance-info">
-                      <p class="performance-time">
-                        <strong>Performance:</strong> {{ formatDateTime(artist.performance.dateTime) }}
-                      </p>
-                      <p class="performance-budget">
-                        <strong>Budget:</strong> {{ formatCurrency(artist.performance.budget) }}
-                      </p>
-                    </div>
-                  }
-                </div>
-              }
+        <div class="artists-section">
+          <h3>Nominated Artists</h3>
+          <div class="artists-grid">
+            <!-- TODO: Loop through category.artists array -->
+            <!-- For each artist, display an artist card -->
+            <!-- TODO: Add conditional class 'has-performance' if artist.performance exists -->
+            <div class="artist-card">
+              <div class="artist-header">
+                <h4 class="artist-name">Artist Name</h4>
+                <!-- TODO: Display performance badge only if artist.performance exists -->
+                <span class="performance-badge">🎵 Performing</span>
+              </div>
+              <!-- TODO: Display performance info only if artist.performance exists -->
+              <div class="performance-info">
+                <p class="performance-time">
+                  <!-- TODO: Format dateTime using Angular date pipe (e.g., 'long' format) -->
+                  <strong>Performance:</strong> 01.01.2026 12:00
+                </p>
+                <p class="performance-budget">
+                  <!-- TODO: Format budget as currency (USD format) -->
+                  <strong>Budget:</strong> $0.00
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      }
+      </div>
     </div>
-  } @else {
-    <div class="loading">
-      <p>Loading stage details...</p>
-    </div>
-  }
+  </div>
 </div>

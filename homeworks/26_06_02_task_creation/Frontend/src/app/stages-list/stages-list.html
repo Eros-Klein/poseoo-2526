@@ -4,18 +4,31 @@
     <p class="subtitle">View all stages and their scheduled performances</p>
   </div>
 
+  <!-- Loading indicator, display only while loading -->
+  <!-- TODO: Implement loading state - show this element only when data is being fetched -->
+  <p class="hint">Loading stages…</p>
+
+  <!-- Error message, display only if error -->
+  <!-- TODO: Implement error handling - show this alert only when API request fails -->
+  <div class="alert error">
+    <strong>Error:</strong> {{ 'TODO: Display error message here' }}
+  </div>
+
+  <!-- Main content, display only if data is available -->
+  <!-- TODO: Implement conditional rendering - show this grid only when stages array has data -->
   <div class="stages-grid">
-    @for (stage of stages(); track stage.id) {
-      <div class="stage-card" (click)="viewStageDetails(stage.id)">
-        <h2>{{ stage.name }}</h2>
-        <div class="stage-info">
-          <p class="category-count">
-            <strong>{{ stage.categories.length }}</strong> 
-            {{ stage.categories.length === 1 ? 'category' : 'categories' }}
-          </p>
-          <button class="view-button">View Details →</button>
-        </div>
+    <!-- TODO: Loop through stages array -->
+    <!-- Each stage should be displayed as a card -->
+    <!-- Implement click handler to navigate to stage detail view -->
+    <div class="stage-card">
+      <h2>Stage Name</h2>
+      <div class="stage-info">
+        <p class="category-count">
+          <strong>0</strong>
+          categorie/s
+        </p>
+        <button class="view-button">View Details →</button>
       </div>
-    }
+    </div>
   </div>
 </div>

@@ -1,7 +1,5 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MockGrammyDataService } from '../services/mock-grammy-data.service';
-import { ArtistStatistics } from '../models/grammy.models';
 
 @Component({
   selector: 'app-statistics',
@@ -9,34 +7,46 @@ import { ArtistStatistics } from '../models/grammy.models';
   templateUrl: './statistics.html',
   styleUrl: './statistics.css'
 })
-export class Statistics {
-  protected readonly statistics = signal<ArtistStatistics[]>([]);
-  protected readonly hasWinners = signal<boolean>(false);
+export class Statistics implements OnInit {
+  // TODO: Create a signal to store statistics array
+  // Hint: Use signal<ArtistStatistics[]>([])
 
-  private mockDataService = inject(MockGrammyDataService);
+  // TODO: Create signals for loading and error states
+  // Hint: Use signal<boolean>(false) for loading
+  // Hint: Use signal<string | null>(null) for error message
+
+  // TODO: Create a computed signal or method to check if winners have been announced
+  // Hint: hasWinners can be determined by checking if statistics array length > 0
+
+  // TODO: Inject the API service (or MockGrammyDataService for testing)
+  // Hint: Use inject() function
 
   ngOnInit() {
-    const stats = this.mockDataService.getStatistics();
-    this.statistics.set(stats);
-    this.hasWinners.set(stats.length > 0);
+    // TODO: Implement initialization logic
+    // 1. Set loading to true
+    // 2. Fetch statistics from API
+    // 3. Update statistics signal with fetched data
+    // 4. Handle errors and update error signal
+    // 5. Set loading to false when done
   }
 
-  formatScore(score: number): string {
-    return score.toFixed(2);
-  }
+  // TODO: Implement formatScore method
+  // Takes score: number as parameter
+  // Returns score formatted to 2 decimal places
+  // Hint: Use toFixed(2)
 
-  getScoreClass(score: number): string {
-    if (score > 1) return 'score-high';
-    if (score > 0.5) return 'score-medium';
-    return 'score-low';
-  }
+  // TODO: Implement getScoreClass method
+  // Takes score: number as parameter
+  // Returns CSS class based on score value:
+  //   - 'score-high' if score > 1
+  //   - 'score-medium' if score > 0.5
+  //   - 'score-low' otherwise
 
-  getRankBadge(index: number): string {
-    switch(index) {
-      case 0: return '🥇';
-      case 1: return '🥈';
-      case 2: return '🥉';
-      default: return `#${index + 1}`;
-    }
-  }
+  // TODO: Implement getRankBadge method
+  // Takes index: number as parameter (0-based)
+  // Returns rank badge:
+  //   - '🥇' for index 0 (1st place)
+  //   - '🥈' for index 1 (2nd place)
+  //   - '🥉' for index 2 (3rd place)
+  //   - '#N' for others (e.g., '#4', '#5', etc.)
 }

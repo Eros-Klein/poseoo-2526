@@ -4,124 +4,120 @@
     <p class="subtitle">Artist performance scores based on budget usage, wins, and nominations</p>
   </div>
 
-  @if (!hasWinners()) {
-    <div class="no-winners-message">
-      <div class="icon">📊</div>
-      <h2>No Statistics Available</h2>
-      <p>Performance statistics will be available after category winners are announced.</p>
-      <p class="info-text">Statistics are calculated based on:</p>
-      <ul>
-        <li>Budget usage (exceedances and undershoots)</li>
-        <li>Winning categories (with priority weighting)</li>
-        <li>Nominated categories (with priority weighting)</li>
-      </ul>
-    </div>
-  } @else {
-    <div class="statistics-content">
-      <!-- Summary Cards -->
-      <div class="summary-cards">
-        <div class="summary-card">
-          <div class="card-icon">🎵</div>
-          <div class="card-content">
-            <h3>{{ statistics().length }}</h3>
-            <p>Performing Artists</p>
-          </div>
-        </div>
-        
-        <div class="summary-card highlight">
-          <div class="card-icon">🏆</div>
-          <div class="card-content">
-            <h3>{{ statistics()[0]?.artistName || 'N/A' }}</h3>
-            <p>Top Performer</p>
-          </div>
-        </div>
-        
-        <div class="summary-card">
-          <div class="card-icon">📈</div>
-          <div class="card-content">
-            <h3>{{ formatScore(statistics()[0]?.performanceScore || 0) }}</h3>
-            <p>Highest Score</p>
-          </div>
+  <!-- Loading indicator, display only while loading -->
+  <!-- TODO: Show this element only when statistics data is being loaded -->
+  <p class="hint">Loading statistics…</p>
+
+  <!-- Error message, display only if error -->
+  <!-- TODO: Implement error handling - show this alert only when API request fails -->
+  <div class="alert error">
+    <strong>Error:</strong> {{ 'TODO: Display error message here' }}
+  </div>
+
+  <!-- No winners message, display only if no winners have been announced yet -->
+  <!-- TODO: Show this section only when statistics array is empty (no winners announced) -->
+  <div class="no-winners-message">
+    <div class="icon">📊</div>
+    <h2>No Statistics Available</h2>
+    <p>Performance statistics will be available after category winners are announced.</p>
+    <p class="info-text">Statistics are calculated based on:</p>
+    <ul>
+      <li>Budget usage (exceedances and undershoots)</li>
+      <li>Winning categories (with priority weighting)</li>
+      <li>Nominated categories (with priority weighting)</li>
+    </ul>
+  </div>
+
+  <!-- Main content, display only if statistics are available -->
+  <!-- TODO: Show this section only when statistics array has data -->
+  <div class="statistics-content">
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="card-icon">🎵</div>
+        <div class="card-content">
+          <!-- TODO: Display total number of performing artists (statistics array length) -->
+          <h3>0</h3>
+          <p>Performing Artists</p>
         </div>
       </div>
-
-      <!-- Statistics Table -->
-      <div class="statistics-table-container">
-        <h2>Detailed Rankings</h2>
-        <table class="statistics-table">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Artist</th>
-              <th>Performance Score</th>
-              <th>Budget Points</th>
-              <th>Winning Categories Points</th>
-              <th>Nominated Categories Points</th>
-            </tr>
-          </thead>
-          <tbody>
-            @for (stat of statistics(); track stat.artistId; let i = $index) {
-              <tr [class]="i < 3 ? 'top-rank' : ''">
-                <td class="rank-cell">
-                  <span class="rank-badge">{{ getRankBadge(i) }}</span>
-                </td>
-                <td class="artist-cell">
-                  <strong>{{ stat.artistName }}</strong>
-                </td>
-                <td class="score-cell">
-                  <span class="score-value" [class]="getScoreClass(stat.performanceScore)">
-                    {{ formatScore(stat.performanceScore) }}
-                  </span>
-                </td>
-                <td class="points-cell">
-                  <span [class.positive]="stat.budgetPoints > 0" [class.negative]="stat.budgetPoints < 0">
-                    {{ stat.budgetPoints > 0 ? '+' : '' }}{{ formatScore(stat.budgetPoints) }}
-                  </span>
-                </td>
-                <td class="points-cell">
-                  <span class="positive">
-                    +{{ formatScore(stat.winningCategoriesPoints) }}
-                  </span>
-                </td>
-                <td class="points-cell">
-                  <span class="neutral">
-                    +{{ formatScore(stat.nominatedCategoriesPoints) }}
-                  </span>
-                </td>
-              </tr>
-            }
-          </tbody>
-        </table>
+      
+      <div class="summary-card highlight">
+        <div class="card-icon">🏆</div>
+        <div class="card-content">
+          <!-- TODO: Display top performer name (first item in sorted statistics array) -->
+          <h3>Artist Name</h3>
+          <p>Top Performer</p>
+        </div>
       </div>
-
-      <!-- Scoring Explanation -->
-      <div class="explanation-section">
-        <h3>How Scores are Calculated</h3>
-        <div class="explanation-grid">
-          <div class="explanation-card">
-            <h4>💰 Budget Points</h4>
-            <p><strong>Exceedances:</strong> +1 point per 25% over budget (max +10)</p>
-            <p><strong>Undershoots:</strong> -1 point per 25% under budget (max -10)</p>
-          </div>
-          
-          <div class="explanation-card">
-            <h4>🏆 Winning Categories</h4>
-            <p><strong>Across Genres:</strong> 2 points per win</p>
-            <p><strong>Genre Specific:</strong> 1 point per win</p>
-          </div>
-          
-          <div class="explanation-card">
-            <h4>🎤 Nominations</h4>
-            <p><strong>Across Genres:</strong> 0.25 points per nomination</p>
-            <p><strong>Genre Specific:</strong> 0.1 points per nomination</p>
-          </div>
-          
-          <div class="explanation-card">
-            <h4>📊 Final Score</h4>
-            <p>Sum of all factors divided by total number of performing artists</p>
-          </div>
+      
+      <div class="summary-card">
+        <div class="card-icon">📈</div>
+        <div class="card-content">
+          <!-- TODO: Display highest score (first item's performanceScore, formatted to 2 decimals) -->
+          <h3>0.00</h3>
+          <p>Highest Score</p>
         </div>
       </div>
     </div>
-  }
+
+    <!-- Statistics Table -->
+    <div class="statistics-table-container">
+      <h2>Detailed Rankings</h2>
+      <table class="statistics-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Artist</th>
+            <th>Performance Score</th>
+            <th>Budget Points</th>
+            <th>Winning Categories Points</th>
+            <th>Nominated Categories Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- TODO: Loop through statistics array -->
+          <!-- For each statistic, display a table row -->
+          <!-- TODO: Add conditional class 'top-rank' if index < 3 (top 3 performers) -->
+          <tr>
+            <td class="rank-cell">
+              <!-- TODO: Display rank badge: 🥇 for 1st, 🥈 for 2nd, 🥉 for 3rd, #N for others -->
+              <span class="rank-badge">🥇</span>
+            </td>
+            <td class="artist-cell">
+              <!-- TODO: Display artist name -->
+              <strong>Artist Name</strong>
+            </td>
+            <td class="score-cell">
+              <!-- TODO: Add dynamic class based on score value -->
+              <!-- 'score-high' if > 1, 'score-medium' if > 0.5, 'score-low' otherwise -->
+              <span class="score-value">
+                <!-- TODO: Display performanceScore formatted to 2 decimals -->
+                0.00
+              </span>
+            </td>
+            <td class="points-cell">
+              <!-- TODO: Add class 'positive' if budgetPoints > 0, 'negative' if < 0 -->
+              <!-- TODO: Add '+' prefix if budgetPoints > 0 -->
+              <span>
+                +0.00
+              </span>
+            </td>
+            <td class="points-cell">
+              <!-- TODO: Display winningCategoriesPoints formatted to 2 decimals with + prefix -->
+              <span class="positive">
+                +0.00
+              </span>
+            </td>
+            <td class="points-cell">
+              <!-- TODO: Display nominatedCategoriesPoints formatted to 2 decimals with + prefix -->
+              <span class="neutral">
+                +0.00
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

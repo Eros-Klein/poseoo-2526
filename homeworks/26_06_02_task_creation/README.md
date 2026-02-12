@@ -180,22 +180,68 @@ Add a few (at least 3) meaningful integration tests, so we can be sure the stati
 
 ## Frontend
 
+The frontend is structured as a learning exercise with HTML/CSS templates already implemented and TypeScript components containing comprehensive TODO comments and implementation guidelines.
+
+### Implementation Structure
+
+- **HTML Templates**: Complete markup with TODO placeholders indicating where dynamic data should be displayed
+- **CSS Stylesheets**: Fully implemented and ready to use (no modifications needed)
+- **TypeScript Components**: Component structure with detailed TODO comments guiding the implementation
+
+### Essential Views
+
 There are three essential views that need to be implemented:
 
-### Stages View
+#### Stages View (`/stages`)
 
 This view shows all stages and the amount of their categories.
 ![Frontend](./Frontend1.png)
 
-### Stage Detail View
+**Key Implementation Tasks:**
+- Fetch and display list of stages
+- Handle loading and error states
+- Navigate to stage detail on card click
+
+#### Stage Detail View (`/stages/:id`)
 
 This view shows all details of a stage and its included categories.
 ![Frontend](./Frontend2.png)
 
-### Statistics View
+**Key Implementation Tasks:**
+- Read stage ID from route parameters
+- Fetch and display stage details
+- Display categories, artists, and performances
+- Format currency and date/time values
+- Show winner information (if available)
+
+#### Statistics View (`/statistics`)
 
 This view shows the performance scores for all performing artists.
 ![Frontend](./Frontend3.png)
+
+**Key Implementation Tasks:**
+- Fetch and display performance statistics
+- Handle case when no winners are announced yet
+- Display rankings with proper formatting
+- Calculate and display summary statistics
+
+### Implementation Guide
+
+See `Frontend/IMPLEMENTATION_GUIDE.md` for:
+- Detailed implementation instructions
+- Angular patterns and best practices
+- Code examples and hints
+- Common pitfalls to avoid
+- Recommended implementation order
+
+### Key Concepts Covered
+
+- **Signals**: Reactive state management
+- **Dependency Injection**: Using `inject()` function
+- **Routing**: Route parameters, navigation, active links
+- **Template Syntax**: Control flow (`@if`, `@for`), property/event binding, pipes
+- **HTTP**: API integration and error handling
+- **Formatting**: Currency, dates, numbers
 
 ## Technologies
 
@@ -206,15 +252,5 @@ This view shows the performance scores for all performing artists.
 - Frontend: Angular 21
   - Standalone components
   - Signals
+  - Control flow syntax (`@if`, `@for`)
   - Generated API client using OpenAPI (`npm run generate-web-api` in the Frontend project)
-
-## Grading Criteria
-
-Following criteria is cruicially, the rest is also important tho.
-
-- Compiles without errors
-- Importer works and throws correct errors.
-- All API-Queries must be implemented.
-- The following frontend features are implemented:
-  - Stages are queried and displayed.
-  - Statistics are calculated and displayed.

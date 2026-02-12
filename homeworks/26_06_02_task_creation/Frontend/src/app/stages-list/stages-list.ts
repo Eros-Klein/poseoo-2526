@@ -1,8 +1,5 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { MockGrammyDataService } from '../services/mock-grammy-data.service';
-import { Stage } from '../models/grammy.models';
 
 @Component({
   selector: 'app-stages-list',
@@ -11,16 +8,27 @@ import { Stage } from '../models/grammy.models';
   styleUrl: './stages-list.css'
 })
 export class StagesList {
-  protected readonly stages = signal<Stage[]>([]);
+  // TODO: Create a signal to store stages array
+  // Hint: Use signal<Stage[]>([])
 
-  private mockDataService = inject(MockGrammyDataService);
-  private router = inject(Router);
+  // TODO: Create signals for loading and error states
+  // Hint: Use signal<boolean>(false) for loading
+  // Hint: Use signal<string | null>(null) for error message
 
-  ngOnInit() {
-    this.stages.set(this.mockDataService.getStages());
-  }
+  // TODO: Inject the API service (or MockGrammyDataService for testing)
+  // Hint: Use inject() function
 
-  viewStageDetails(stageId: string): void {
-    this.router.navigate(['/stages', stageId]);
-  }
+  // TODO: Inject Router for navigation
+  // Hint: Use inject(Router)
+
+  // TODO: Implement ngOnInit lifecycle hook
+  // 1. Set loading to true
+  // 2. Fetch stages from API
+  // 3. Update stages signal with fetched data
+  // 4. Handle errors and update error signal
+  // 5. Set loading to false when done
+
+  // TODO: Implement viewStageDetails method
+  // Takes stageId as parameter
+  // Navigates to /stages/:id route
 }

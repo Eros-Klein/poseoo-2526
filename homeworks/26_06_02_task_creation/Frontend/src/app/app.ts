@@ -1,13 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from "@angular/router";
+
+// TODO: Import routing modules (RouterOutlet, RouterLink, RouterLinkActive)
+// Hint: import from '@angular/router'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
+  // TODO: Add router modules to imports array
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Grammy Performance Planning');
+  // TODO: Create a signal to store the application title
+  // Hint: Use signal<string>('Grammy Performance Planning')
 }

@@ -1,8 +1,5 @@
-import { Component, signal, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MockGrammyDataService } from '../services/mock-grammy-data.service';
-import { Stage, PriorityLevel } from '../models/grammy.models';
 
 @Component({
   selector: 'app-stage-detail',
@@ -11,50 +8,51 @@ import { Stage, PriorityLevel } from '../models/grammy.models';
   styleUrl: './stage-detail.css'
 })
 export class StageDetail implements OnInit {
-  protected readonly stage = signal<Stage | null>(null);
-  protected readonly PriorityLevel = PriorityLevel;
+  // TODO: Create a signal to store the stage data
+  // Hint: Use signal<Stage | null>(null)
 
-  private route = inject(ActivatedRoute);
-  private router = inject(Router);
-  private mockDataService = inject(MockGrammyDataService);
+  // TODO: Create signals for loading and error states
+  // Hint: Use signal<boolean>(true) for loading (start as true)
+  // Hint: Use signal<string | null>(null) for error message
+
+  // TODO: Expose PriorityLevel enum to template
+  // Hint: protected readonly PriorityLevel = PriorityLevel;
+
+  // TODO: Inject ActivatedRoute to get route parameter (stage ID)
+  // Hint: Use inject(ActivatedRoute)
+
+  // TODO: Inject Router for navigation
+  // Hint: Use inject(Router)
+
+  // TODO: Inject the API service (or MockGrammyDataService for testing)
+  // Hint: Use inject() function
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      const foundStage = this.mockDataService.getStageById(id);
-      if (foundStage) {
-        this.stage.set(foundStage);
-      } else {
-        // Stage not found, redirect to stages list
-        this.router.navigate(['/stages']);
-      }
-    }
+    // TODO: Implement initialization logic
+    // 1. Get the stage ID from route parameters
+    //    Hint: this.route.snapshot.paramMap.get('id')
+    // 2. If ID exists, fetch stage data from API
+    // 3. Update stage signal with fetched data
+    // 4. If stage not found, set error message and/or redirect to stages list
+    // 5. Handle errors and update error signal
+    // 6. Set loading to false when done
   }
 
-  goBack(): void {
-    this.router.navigate(['/stages']);
-  }
+  // TODO: Implement goBack method
+  // Navigates back to /stages route
 
-  getPriorityLabel(priority: PriorityLevel): string {
-    return priority === PriorityLevel.AcrossGenres ? 'Across Genres' : 'Genre Specific';
-  }
+  // TODO: Implement getPriorityLabel method
+  // Takes priority: PriorityLevel as parameter
+  // Returns 'Across Genres' for AcrossGenres priority
+  // Returns 'Genre Specific' for GenreSpecific priority
 
-  formatCurrency(amount: number): string {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0
-    }).format(amount);
-  }
+  // TODO: Implement formatCurrency method
+  // Takes amount: number as parameter
+  // Returns formatted currency string (USD format)
+  // Hint: Use Intl.NumberFormat with style: 'currency', currency: 'USD'
 
-  formatDateTime(dateTime: string): string {
-    return new Date(dateTime).toLocaleString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short'
-    });
-  }
+  // TODO: Implement formatDateTime method
+  // Takes dateTime: string as parameter
+  // Returns formatted date/time string
+  // Hint: Use Date.toLocaleString() with appropriate options
 }

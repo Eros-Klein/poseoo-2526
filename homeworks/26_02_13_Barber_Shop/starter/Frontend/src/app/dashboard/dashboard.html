@@ -1,0 +1,69 @@
+<div class="container">
+  <header class="page-header">
+    <div>
+      <h1 class="page-title">Gerrit's Cuts</h1>
+      <p class="page-subtitle">Where Your Wallet Gets a Haircut Too™</p>
+    </div>
+
+    <a class="btn btn-primary" routerLink="/editor">
+      <span>📅</span>
+      <span>Book Your Financial Sacrifice</span>
+    </a>
+  </header>
+
+  <div class="card" style="position: relative">
+    <div class="loading-container" [class.hidden]="!loading()">
+      <div class="spinner"></div>
+      <p class="text-secondary mt-4">Calculating obscure charges...</p>
+    </div>
+
+    <!-- Appointments Table -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Date & Time</th>
+            <th>Valued Customer</th>
+            <th>Artist</th>
+            <th>Premium Services</th>
+            <th class="text-right">Investment Required</th>
+            <th class="text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (apt of appointments(); track apt.id) {
+            <tr>
+              <td>
+                <div class="font-semibold">{{ formatDate(apt.date) }}</div>
+                <div class="text-secondary text-sm">{{ formatTime(apt.startTime) }}</div>
+              </td>
+              <td>
+                <div class="font-semibold">{{ apt.customerName }}</div>
+              </td>
+              <td>
+                <span class="badge badge-primary">{{ apt.barberName ?? '—' }}</span>
+              </td>
+              <td>
+                <div class="text-sm">{{ formatServices(apt.services) }}</div>
+              </td>
+              <td class="text-right">
+                <div class="font-bold text-success">€{{ formatPrice(apt.calculatedPrice) }}</div>
+              </td>
+              <td class="text-right">
+                <button type="button" class="btn btn-danger" (click)="deleteAppointment(apt.id)">Cancel (No Refunds)</button>
+              </td>
+            </tr>
+          }
+          @if (appointments().length === 0 && !loading()) {
+            <tr>
+              <td colspan="6" class="empty-state">
+                No victims scheduled yet. The money printer is offline.
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="card" style="position: relative"></div>

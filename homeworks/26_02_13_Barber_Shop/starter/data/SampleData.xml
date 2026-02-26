@@ -1,0 +1,4 @@
+<Appointment Id="201" Customer="Regular Joe" Date="2024-01-15" Start="09:00" Duration="45" Services="CUT" Barber="Gerrit" />
+<Appointment Id="202" Customer="Alice & Bob" Date="15.01.2024" Start="10:00" Duration="60" Services="COLOR|CUT" Barber="Todd" />
+<Appointment Id="203" Customer="Fast Cut" Date="2024-01-15" Start="13:30" Duration="15" Services="TRIM" Barber="Gerrit" />
+<Appointment Id="204" Customer="Mystery Man" Date="2024-01-16" Start="14:00" Duration="30" Services="" Barber="Todd" />

@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Appointment Booking Form</h2>
+      <p class="card-description">Complete your financial commitment below</p>
+    </div>
+
+    @if (errorMessage()) {
+      <div class="card-body" style="color: var(--danger); margin-bottom: 1rem;">
+        {{ errorMessage() }}
+      </div>
+    }
+
+    <form class="card-body" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Customer Name -->
+      <div class="form-group">
+        <label class="form-label"> Customer Name (for invoicing purposes) </label>
+        <input type="text" class="form-input" placeholder="e.g., Warren Buffett" formControlName="customerName" />
+      </div>
+
+      <div class="form-grid form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Appointment Date</label>
+          <input type="date" class="form-input" formControlName="date" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Start Time</label>
+          <input type="time" class="form-input" formControlName="startTime" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Duration (minutes)</label>
+        <input type="number" class="form-input" placeholder="60" min="15" step="15" formControlName="durationMinutes" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Select Your Barber</label>
+        <div class="radio-group">
+          <label class="radio-card">
+            <input type="radio" name="barber" value="Gerrit" [checked]="form.get('barberName')?.value === 'Gerrit'" (change)="form.patchValue({ barberName: 'Gerrit' })" />
+            <div class="radio-content">
+              <div class="radio-title">Gerrit</div>
+              <div class="radio-description">Master Artisan</div>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="barber" value="Todd" [checked]="form.get('barberName')?.value === 'Todd'" (change)="form.patchValue({ barberName: 'Todd' })" />
+            <div class="radio-content">
+              <div class="radio-title">Todd</div>
+              <div class="radio-description">Learning in Public</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Select Services</label>
+        <div>
+          @for (opt of serviceOptions; track opt.styleReference) {
+            <div class="checkbox-item">
+              <label class="checkbox-label">
+                <input type="checkbox" [checked]="isServiceSelected(opt.styleReference)" (change)="toggleService(opt)" />
+                <span class="checkbox-name">{{ opt.name }}</span>
+              </label>
+              <span class="checkbox-price">€{{ opt.basePrice.toFixed(2) }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Beverage Preference</label>
+        <select class="form-select" formControlName="beverageChoice">
+          <option value="">None (remain thirsty)</option>
+          <option value="Coffee">Coffee (€8 surcharge)</option>
+          <option value="Tea">Tea (€8 surcharge)</option>
+          <option value="Water">Tap Water (€8 surcharge)</option>
+          <option value="Champagne">Champagne (still €8 surcharge 🤫)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-label" style="cursor: pointer">
+          <input type="checkbox" formControlName="isVip" />
+          <span class="checkbox-name">
+            <strong>VIP Treatment</strong> - Receive personalized attention and 1.5x price
+            multiplier
+          </span>
+        </label>
+      </div>
+
+      <div class="price-estimate" style="position: relative">
+        <div class="flex items-center justify-between">
+          <span class="price-estimate-label">Estimated Financial Damage:</span>
+          <span class="price-estimate-value">€{{ estimateDisplay() }}</span>
+        </div>
+      </div>
+
+      <div class="flex gap-4 mt-6">
+        <a routerLink="/dashboard" class="btn btn-secondary" style="flex: 1; text-align: center">
+          🏃 Flee While You Can
+        </a>
+        <button type="submit" class="btn btn-primary" style="flex: 2" [disabled]="submitting()">
+          💸 Commit to Financial Ruin
+        </button>
+      </div>
+
+      <div
+        class="scam-disclaimer"
+        style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem"
+      >
+        By submitting this form, you acknowledge that:
+        <ul style="text-align: left; margin-top: 0.5rem; padding-left: 1.5rem; list-style: disc">
+          <li>Gerrit reserves the right to adjust prices based on your LinkedIn salary range</li>
+          <li>All sales are final. No refunds. No survivors.</li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,189 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WebApi | v1",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/appointments": {
+      "get": {
+        "tags": [
+          "Appointments"
+        ],
+        "description": "Retrieve all appointments",
+        "operationId": "GetAllAppointments",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Appointments"
+        ],
+        "description": "Create a new appointment",
+        "operationId": "CreateAppointment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/appointments/{id}": {
+      "get": {
+        "tags": [
+          "Appointments"
+        ],
+        "description": "Retrieve a specific appointment by ID",
+        "operationId": "GetAppointmentById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Appointments"
+        ],
+        "description": "Delete an appointment by ID",
+        "operationId": "DeleteAppointment",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/appointments/estimate": {
+      "post": {
+        "tags": [
+          "Appointments"
+        ],
+        "description": "Get price estimate for an appointment without saving",
+        "operationId": "EstimatePrice",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointment"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Appointment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "duration": {
+            "pattern": "^-?(\\d+\\.)?\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,7})?$",
+            "type": "string"
+          },
+          "customerName": {
+            "type": "string"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppointmentService"
+            }
+          },
+          "barberName": {
+            "type": "string",
+            "nullable": true
+          },
+          "beverageChoice": {
+            "type": "string",
+            "nullable": true
+          },
+          "isVip": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AppointmentService": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "styleReference": {
+            "$ref": "#/components/schemas/StyleReference"
+          },
+          "appointmentId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "StyleReference": {
+        "type": "integer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Appointments"
+    }
+  ]
+}

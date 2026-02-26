@@ -1,0 +1,6 @@
+<Appointment Id="101" Customer="John Doe" Date="2023-10-01" Start="09:00" Duration="30" Services="CUT|SHAVE" Barber="Gerrit" />
+<Appointment Id="102" Customer="Jane Smith & Sons" Date="02.10.2023" Start="10:00" Duration="60" Services="COLOR" Barber="Todd" />
+<Appointment Id="103" Customer="Bobby Tables" Date="2023-10-03" Start="11:00" Duration="45" Services="" Barber="Gerrit" />
+<Appointment Id="104" Customer="" Date="2023-10-04" Start="12:00" Duration="30" Services="CUT" Barber="Todd" />
+<Appointment Id="105" Customer="Invalid Date Guy" Date="Not-A-Date" Start="13:00" Duration="30" Services="CUT" Barber="Gerrit" />
+<Appointment Id="106" Customer="Complex Case" Date="05.10.2023" Start="14:00" Duration="15" Services="BEARD|TRIM|SHAVE" Barber="Todd" />
